@@ -1,0 +1,205 @@
+"use client";
+
+import React, { Suspense, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+
+// Local components
+import Breadcrumbs from "@/components/ui/breadcrumbs";
+import Footer from "@/components/ui/footer";
+import HeaderMain from "@/components/ui/header";
+import { StaggerWrapper } from "@/components/staggerWrapper";
+
+// Local utilities and hooks
+import { useStaggerAnimation, ANIMATION } from "@/hooks/useStaggerAnimation";
+
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
+const galleryImages: GalleryImage[] = [
+  {
+    src: "/images/hobby/image.png",
+    alt: "Urban landscape captured in black and white film",
+  },
+  {
+    src: "/images/hobby/image copy.png",
+    alt: "Architectural details of a historic building",
+  },
+  {
+    src: "/images/hobby/image copy 2.png",
+    alt: "Street photography moment in the city",
+  },
+  {
+    src: "/images/hobby/image copy 3.png",
+    alt: "Abstract composition of city elements",
+  },
+  {
+    src: "/images/hobby/image copy 4.png",
+    alt: "Portrait of urban life through analog lens",
+  },
+];
+
+function AboutContent() {
+  const router = useRouter();
+  const { getTransition } = useStaggerAnimation({
+    baseDelay: ANIMATION.BASE_DELAY,
+  });
+  const crumbs = [{ label: "ABOUT ME" }];
+  const [selectedButton, setSelectedButton] = useState<string>("about");
+  const [headerText, setHeaderText] = useState("Hey, I'm Rajat.");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setHeaderText(window.innerWidth <= 470 ? "Rajat." : "Hey, I'm Rajat.");
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleButtonClick = (buttonName: string) => {
+    setSelectedButton(buttonName);
+    switch (buttonName) {
+      case "home":
+        router.push("/");
+        break;
+      case "projects":
+        router.push("/archive");
+        break;
+    }
+  };
+
+  return (
+    <main className="page-container page-container-default">
+      <div className="flex flex-col gap-2 items-center w-full">
+        <section className="flex flex-col gap-2 w-full">
+          <HeaderMain
+            headerText={headerText}
+            selectedButton={selectedButton}
+            handleButtonClick={handleButtonClick}
+          />
+        </section>
+
+        <div className="flex flex-col gap-4 items-start w-full mx-auto">
+          <Breadcrumbs crumbs={crumbs} />
+
+          <article className="w-full flex flex-col gap-[5rem]">
+            <StaggerWrapper {...getTransition(0)}>
+              <section className="flex flex-col gap-[1.5rem]">
+                {/* Text Section */}
+                <div className="flex flex-col gap-[0.75rem]">
+                  <p className="b_mono">
+                    I'm a UX designer and final-year Computer Science student
+                    based in Mumbai, passionate about creating meaningful
+                    digital experiences that put users at the heart of every
+                    design decision.
+                  </p>
+                  <p className="b_mono">
+                    My love for design began early in childhood, naturally drawn
+                    to creative expression through drawing and painting. These
+                    early experiences shaped my ability to notice subtle details
+                    and understand how visual elements influence emotions and
+                    perceptions.
+                  </p>
+                  <p className="b_mono">
+                    During my engineering journey at university, I explored
+                    various domains including web development, machine learning,
+                    and DevOps, focusing intensively on frontend development for
+                    nearly a year. However, while my peers concentrated on code
+                    performance and features, I found myself constantly
+                    questioning design decisions and thinking about user
+                    interactions. This led me to discover UX design, which felt
+                    like finding the missing piece of a puzzle. Since then, I've
+                    been continuously improving my skills through hands-on
+                    projects, learning from user feedback, and staying updated
+                    with design trends and methodologies.
+                  </p>
+                  <p className="b_mono">
+                    My goal as a UX designer is to create digital experiences
+                    that feel natural and intuitive, making complex systems
+                    simple and ensuring technology enhances rather than
+                    complicates our daily lives.
+                  </p>
+                </div>
+              </section>
+            </StaggerWrapper>
+          </article>
+
+          <StaggerWrapper {...getTransition(1)} className="w-full">
+            <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
+          </StaggerWrapper>
+
+          <section className="flex flex-col gap-[1.5rem]">
+            <StaggerWrapper {...getTransition(2)}>
+              <div className="flex flex-col gap-[0.75rem]">
+                <h2>Beyond Design</h2>
+                <p className="b_mono">
+                  When I'm not designing or coding, you'll find me exploring the
+                  city through my camera lens. I'm passionate about analog
+                  photography, capturing urban landscapes, architectural
+                  details, and everyday moments that tell stories of the world
+                  around us.
+                </p>
+              </div>
+            </StaggerWrapper>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1.5rem]">
+              {galleryImages.map((image, index) => (
+                <StaggerWrapper
+                  key={index}
+                  {...getTransition(index + 3)} // Start from 3 to account for previous sections
+                >
+                  <div className="flex flex-col gap-[0.75rem]">
+                    <div className="w-full relative overflow-hidden rounded-[0.375rem] inner-shadow-tertiary">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={1200}
+                        height={800}
+                        className="w-full h-auto"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
+                    <p className="b_mono text-[0.875rem]">{image.alt}</p>
+                  </div>
+                </StaggerWrapper>
+              ))}
+            </div>
+          </section>
+
+          <StaggerWrapper
+            {...getTransition(galleryImages.length + 3)}
+            className="w-full"
+          >
+            <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
+          </StaggerWrapper>
+
+          <StaggerWrapper
+            {...getTransition(galleryImages.length + 4)}
+            className="w-full"
+          >
+            <Footer />
+          </StaggerWrapper>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+export default function About() {
+  return (
+    <Suspense fallback={null}>
+      <AboutContent />
+    </Suspense>
+  );
+}
