@@ -28,7 +28,7 @@ export const StaggerWrapper = ({
   animate,
   transition = {
     duration: STAGGER_ANIMATION.DURATION,
-    ease: STAGGER_ANIMATION.EASING,
+    ease: [...STAGGER_ANIMATION.EASING],
   },
   className = "",
 }: StaggerWrapperProps) => {
