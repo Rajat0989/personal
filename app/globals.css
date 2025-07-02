@@ -17,13 +17,14 @@
     --font-commit-mono: "CommitMono", monospace;
     --font-tiempos-headline: "TiemposHeadline", serif;
     --font-tiempos-text: "TiemposText", serif;
+    --font-schibsted-grotesk: "Schibsted Grotesk", sans-serif;
 
     /* Font sizes */
-    --font-size-small: 0.875rem;
-    --font-size-body: 1.08rem;
+    --font-size-small: 0.84rem;
+    --font-size-body: 1.12rem;
     --font-size-heading: 2.074rem;
-    --font-size-title: 1.728rem;
-    --font-size-subheading: 1.2rem;
+    --font-size-title: 1.68rem;
+    --font-size-subheading: 1.28rem;
 
     --line-height-body: 1.5;
     --line-height-headings: 1.35;
@@ -42,61 +43,58 @@
     --max-width-study: 40rem;
   }
 
-  /* Responsive font sizes */
   html {
     font-size: 13px;
   }
-
   @media (min-width: 420px) {
     html {
       font-size: 14px;
     }
   }
-
   @media (min-width: 1024px) {
     html {
       font-size: 15px;
     }
   }
 
-  /* Typography styles */
   h1 {
     @apply text-heading font-tiempos-headline text-primary-color;
   }
-
   h2 {
     @apply text-title font-tiempos-headline text-primary-color;
   }
-
   h3 {
     @apply text-subheading font-tiempos-headline text-primary-color;
   }
-
-  h4 {
-    @apply text-small font-commit-mono text-secondary-color;
+  .small {
+    @apply text-small font-medium text-secondary-color;
   }
-
+  p {
+    @apply text-body text-primary-color tracking-tight;
+  }
   .b_mono {
-    @apply text-body font-commit-mono text-primary-color tracking-[-0.02em];
+    @apply text-body font-commit-mono text-primary-color tracking-tighter;
   }
-
   .b_serif {
     @apply text-body font-tiempos-text text-primary-color-light tracking-wide;
   }
-
+  .b_sans {
+    @apply text-body text-primary-color;
+    font-family: var(--font-schibsted-grotesk);
+  }
   .italic-text {
     font-style: italic;
   }
-
   .tiempos-headline {
     font-family: var(--font-tiempos-headline);
   }
-
+  .schibsted-grotesk {
+    font-family: var(--font-schibsted-grotesk);
+  }
   ::selection {
     background-color: var(--color-select);
     color: var(--color-primary-light);
   }
-
   ::-moz-selection {
     background-color: var(--color-select);
     color: var(--color-primary-light);
@@ -104,43 +102,21 @@
 }
 
 @layer utilities {
-  /* Text styles */
   .text-all-caps {
     @apply uppercase;
   }
-
-  /* Layout utilities */
   .page-container {
     width: 100%;
     margin: 0 auto;
     padding: 12vh 3rem 4vh;
   }
-
   .page-container-default {
     max-width: calc(var(--max-width-default) + 6rem);
   }
-
   .page-container-narrow {
     max-width: calc(var(--max-width-narrow) + 6rem);
   }
 
-  .page-container-study {
-    max-width: calc(var(--max-width-study) + 6rem);
-  }
-
-  @media (max-width: 1500px) {
-    .page-container {
-      padding-top: 13vh;
-    }
-  }
-
-  @media (max-width: 470px) {
-    .page-container {
-      padding-top: 8vh;
-    }
-  }
-
-  /* Underline styles */
   .link-underline,
   .b_mono a.link-underline,
   .b_serif a.link-underline {
@@ -148,110 +124,15 @@
     border-bottom: 2px dotted var(--color-secondary);
     transition: border-color 0.3s ease;
   }
-
   .link-underline-hover,
   .b_mono a.link-underline:hover,
   .b_serif a.link-underline:hover {
     border-bottom: 2px dotted transparent;
   }
-
   .link-underline-hover:hover {
     border-bottom: 2px dotted var(--color-secondary);
   }
-
-  /* Shadow styles */
   .shadow-inset-tertiary {
     box-shadow: inset 0 0 0 0.05rem var(--color-tertiary);
   }
-
-  .subtle-shadow {
-    box-shadow:
-      0px -21.29166603088379px 6.083333492279053px 0px rgba(189, 189, 189, 0%),
-      0px -13.18055534362793px 5.069444179534912px 0px rgba(189, 189, 189, 1%),
-      0px -8.11111068725586px 5.069444179534912px 0px rgba(189, 189, 189, 5%),
-      0px -3.0416667461395264px 3.0416667461395264px 0px rgba(189, 189, 189, 9%),
-      0px -1.0138888359069824px 2.027777671813965px 0px rgba(189, 189, 189, 10%);
-  }
-
-  .fade-bottom {
-    position: relative;
-  }
-
-  .fade-bottom::after {
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 20vh; /* Adjust this value to control the fade height */
-    background: linear-gradient(
-      to bottom,
-      rgba(247, 247, 247, 0),
-      rgba(247, 247, 247, 1)
-    );
-    pointer-events: none; /* Allows interaction with content underneath */
-    z-index: 10;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-
-  .fade-bottom.at-bottom::after {
-    opacity: 0;
-  }
-
-  .inner-shadow-tertiary {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .inner-shadow-tertiary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 0 0.05rem var(--color-tertiary);
-    pointer-events: none;
-    border-radius: inherit;
-    z-index: 1;
-  }
-
-  .folder-svg-container {
-    --folder-stroke-width: 0.05rem; /* This is equivalent to 0.5px at 16px base font size */
-  }
-
-  .folder-container {
-    backdrop-filter: blur(1.7px);
-    -webkit-backdrop-filter: blur(1.7px);
-  }
-
-  .clip-content {
-    overflow: hidden;
-  }
-
-  sup {
-    display: inline-flex;
-    white-space: nowrap;
-  }
-
-  .hover-group:hover .hover-group-hover\:translate-diagonal {
-    transform: translate(2px, -2px);
-  }
-}
-
-/* MDX List Styles */
-
-.mdx-blockquote {
-  @apply border-l-[0.125rem] border-tertiary-color pl-2;
-}
-
-.mdx-ol {
-  list-style-type: decimal;
-  padding-left: 1rem;
-}
-
-.mdx-ol > li {
-  display: list-item;
-  padding-left: 0.25rem;
 }

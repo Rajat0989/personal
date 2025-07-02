@@ -204,7 +204,9 @@ function HomeContent() {
                           />
                         </div>
                         <div className="flex flex-col">
-                          <p className="b_mono text-lg">{project.title}</p>
+                          <p className="b_mono text-xl">
+                            {project.title}
+                          </p>
                           <p className="text-sm text-secondary-color">
                             {project.date}
                           </p>

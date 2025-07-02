@@ -88,7 +88,7 @@ export default function Archive() {
               <section className="flex flex-col gap-[3rem]">
                 {sortedYears.map((year, yearIndex) => (
                   <div key={year} className="flex flex-col gap-[1.5rem]">
-                    <h2 className="text-lg text-secondary-color">{year}</h2>
+                    <h2 className="text-4xl text-primary-color">{year}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                       {projectsByYear[year].map((project, projectIndex) => (
                         <StaggerWrapper
@@ -118,7 +118,7 @@ export default function Archive() {
                                   />
                                 </div>
                                 <div className="flex flex-col">
-                                  <p className="b_mono text-lg">
+                                  <p className="b_mono text-xl">
                                     {project.title}
                                   </p>
                                 </div>
@@ -131,13 +131,6 @@ export default function Archive() {
                   </div>
                 ))}
               </section>
-            </StaggerWrapper>
-
-            <StaggerWrapper
-              {...getTransition(allProjects.length + 1)}
-              className="w-full"
-            >
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </StaggerWrapper>
 
             <StaggerWrapper

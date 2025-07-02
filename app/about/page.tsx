@@ -135,55 +135,6 @@ function AboutContent() {
             </StaggerWrapper>
           </article>
 
-          <StaggerWrapper {...getTransition(1)} className="w-full">
-            <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
-          </StaggerWrapper>
-
-          <section className="flex flex-col gap-[1.5rem]">
-            <StaggerWrapper {...getTransition(2)}>
-              <div className="flex flex-col gap-[0.75rem]">
-                <h2>Beyond Design</h2>
-                <p className="b_mono">
-                  When I'm not designing or coding, you'll find me exploring the
-                  city through my camera lens. I'm passionate about analog
-                  photography, capturing urban landscapes, architectural
-                  details, and everyday moments that tell stories of the world
-                  around us.
-                </p>
-              </div>
-            </StaggerWrapper>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1.5rem]">
-              {galleryImages.map((image, index) => (
-                <StaggerWrapper
-                  key={index}
-                  {...getTransition(index + 3)} // Start from 3 to account for previous sections
-                >
-                  <div className="flex flex-col gap-[0.75rem]">
-                    <div className="w-full relative overflow-hidden rounded-[0.375rem] inner-shadow-tertiary">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={1200}
-                        height={800}
-                        className="w-full h-auto"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    </div>
-                    <p className="b_mono text-[0.875rem]">{image.alt}</p>
-                  </div>
-                </StaggerWrapper>
-              ))}
-            </div>
-          </section>
-
-          <StaggerWrapper
-            {...getTransition(galleryImages.length + 3)}
-            className="w-full"
-          >
-            <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
-          </StaggerWrapper>
-
           <StaggerWrapper
             {...getTransition(galleryImages.length + 4)}
             className="w-full"

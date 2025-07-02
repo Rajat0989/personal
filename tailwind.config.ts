@@ -47,6 +47,7 @@ const config: Config = {
           "var(--font-jacques-francois)",
           "serif",
         ],
+        "dm-sans": ["var(--font-dm-sans", "sans-serif"],
       },
       spacing: {
         "0": "var(--spacing-0)",

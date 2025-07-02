@@ -1,7 +1,7 @@
 // Next.js
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Jacques_Francois } from "next/font/google";
+import { Jacques_Francois, Schibsted_Grotesk } from "next/font/google";
 
 // Third-party packages
 import { Analytics } from "@vercel/analytics/react";
@@ -56,6 +56,12 @@ const jacquesFrancois = Jacques_Francois({
   display: "swap",
 });
 
+const schibstedGrotesk = Schibsted_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-schibsted-grotesk",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Rajat Chandarana",
   description:
@@ -92,7 +98,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${commitMono.variable} ${tiemposHeadline.variable} ${tiemposText.variable} ${jacquesFrancois.variable} antialiased bg-background min-h-screen`}
+        className={`${commitMono.variable} ${tiemposHeadline.variable} ${tiemposText.variable} ${jacquesFrancois.variable} ${schibstedGrotesk.variable} antialiased bg-background min-h-screen`}
       >
         {children}
         <SpeedInsights />

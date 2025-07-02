@@ -40,7 +40,7 @@ const HoverEffectWrapper: React.FC<HoverEffectWrapperProps> = React.memo(
     const combinedClassName = React.useMemo(
       () =>
         cn(
-          "transition-all duration-[300ms] ease-[cubic-bezier(0.21,0.47,0.32,0.98)] transform-gpu",
+          "transition-all transform-gpu",
           hoveredItem && hoveredItem !== id
             ? `opacity-[${HOVER_ANIMATION.OPACITY.INACTIVE}]`
             : `opacity-[${HOVER_ANIMATION.OPACITY.ACTIVE}]`,
@@ -58,6 +58,8 @@ const HoverEffectWrapper: React.FC<HoverEffectWrapperProps> = React.memo(
         style={{
           willChange: "opacity, transform",
           backfaceVisibility: "hidden",
+          transitionDuration: `${HOVER_ANIMATION.DURATION * 1000}ms`,
+          transitionTimingFunction: `cubic-bezier(${HOVER_ANIMATION.EASING.join(",")})`,
         }}
       >
         {children}

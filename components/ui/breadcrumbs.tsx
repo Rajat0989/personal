@@ -51,7 +51,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
     <section className="flex items-center gap-[0.25rem] w-full">
       <Button
         onClick={handleBack}
-        className="flex items-center gap-[0.25rem] pl-[0.5rem]"
+        className="flex items-center gap-[0.25rem] pl-[0.5rem] border border-tertiary-color"
       >
         <ArrowLeftIcon className="w-3 h-3" />
         BACK
@@ -63,9 +63,9 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
             variant={
               index === displayCrumbs.length - 1 ? "selected" : "default"
             }
-            className={
+            className={`border border-tertiary-color ${
               index === displayCrumbs.length - 1 ? "shadow-inset-tertiary" : ""
-            }
+            }`}
             onClick={() => crumb.href && router.push(crumb.href)}
           >
             {crumb.label}
