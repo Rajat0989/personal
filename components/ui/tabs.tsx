@@ -73,10 +73,10 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
         onClick={() => setSelectedTab(value)}
         className={cn(
           "relative inline-flex items-center justify-center whitespace-nowrap rounded-[0.25rem]",
-          "px-[0.875rem] sm:px-[1rem] lg:px-[1.25rem]",
-          "pt-[0.33rem] pb-[0.305rem] sm:pt-[0.375rem] sm:pb-[0.35rem] lg:pt-[0.4375rem] lg:pb-[0.4rem]",
-          "b_mono text-secondary-color transition-colors",
-          "text-[0.75rem] sm:text-[0.875rem] lg:text-[1rem]",
+          "px-[1rem]",
+          "pt-[0.3rem] pb-[0.3rem]",
+          "commit-mono text-secondary-color transition-colors",
+          "text-[1rem]",
           "hover:text-primary-color focus-visible:outline-none",
           "data-[state=active]:text-primary-color",
           className

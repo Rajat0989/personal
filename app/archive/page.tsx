@@ -9,35 +9,22 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
 import Footer from "@/components/ui/footer";
 import HeaderMain from "@/components/ui/header";
-import { HoverEffectWrapper } from "@/components/hoverEffectWrapper";
-import { StaggerWrapper } from "@/components/staggerWrapper";
-
-// Local utilities and hooks
-import { useHoverEffect } from "@/hooks/useHoverEffect";
-import { useStaggerAnimation, ANIMATION } from "@/hooks/useStaggerAnimation";
 import { allProjects } from "@/lib/data/projectData";
 
 export default function Archive() {
   const router = useRouter();
-  const { hoveredItem, handleMouseEnter, handleMouseLeave } = useHoverEffect();
-  const { getTransition } = useStaggerAnimation({
-    baseDelay: ANIMATION.BASE_DELAY,
-  });
   const [selectedButton, setSelectedButton] = useState<string>("projects");
   const [headerText, setHeaderText] = useState("Hey, I'm Rajat.");
 
   // Group projects by year
   const projectsByYear = useMemo(() => {
-    return allProjects.reduce(
-      (acc, project) => {
-        if (!acc[project.date]) {
-          acc[project.date] = [];
-        }
-        acc[project.date].push(project);
-        return acc;
-      },
-      {} as Record<string, typeof allProjects>
-    );
+    return allProjects.reduce((acc, project) => {
+      if (!acc[project.date]) {
+        acc[project.date] = [];
+      }
+      acc[project.date].push(project);
+      return acc;
+    }, {} as Record<string, typeof allProjects>);
   }, []);
 
   // Sort years in descending order
@@ -84,61 +71,38 @@ export default function Archive() {
           <Breadcrumbs crumbs={[{ label: "ALL WORKS" }]} />
 
           <article className="w-full flex flex-col gap-[5rem]">
-            <StaggerWrapper {...getTransition(0)}>
-              <section className="flex flex-col gap-[3rem]">
-                {sortedYears.map((year, yearIndex) => (
-                  <div key={year} className="flex flex-col gap-[1.5rem]">
-                    <h2 className="text-4xl text-primary-color">{year}</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-                      {projectsByYear[year].map((project, projectIndex) => (
-                        <StaggerWrapper
-                          key={project.num}
-                          {...getTransition(projectIndex + 1)}
-                        >
-                          <HoverEffectWrapper
-                            id={project.num}
-                            hoveredItem={hoveredItem}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                            className="w-full"
-                          >
-                            <Link
-                              href={`${project.href}?from=all-works`}
-                              className="w-full"
-                            >
-                              <div className="flex flex-col gap-2">
-                                <div className="w-full relative overflow-hidden rounded-[0.375rem] inner-shadow-tertiary">
-                                  <Image
-                                    src={project.svgSrc}
-                                    alt={project.title}
-                                    width={1200}
-                                    height={800}
-                                    className="w-full h-auto"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                  />
-                                </div>
-                                <div className="flex flex-col">
-                                  <p className="b_mono text-xl">
-                                    {project.title}
-                                  </p>
-                                </div>
-                              </div>
-                            </Link>
-                          </HoverEffectWrapper>
-                        </StaggerWrapper>
-                      ))}
-                    </div>
+            <section className="flex flex-col gap-[3rem]">
+              {sortedYears.map((year, yearIndex) => (
+                <div key={year} className="flex flex-col gap-[1.5rem]">
+                  <h2 className="text-4xl text-primary-color">{year}</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                    {projectsByYear[year].map((project, projectIndex) => (
+                      <Link
+                        key={project.num}
+                        href={project.href}
+                        className="flex flex-col gap-2 w-full group"
+                      >
+                        <div className="w-full relative overflow-hidden rounded-[0.375rem] inner-shadow-tertiary">
+                          <Image
+                            src={project.svgSrc}
+                            alt={project.title}
+                            width={1200}
+                            height={800}
+                            className="w-full h-auto"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        </div>
+                        <div className="flex flex-col">
+                          <p className="commit-mono text-xl">{project.title}</p>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
-                ))}
-              </section>
-            </StaggerWrapper>
+                </div>
+              ))}
+            </section>
 
-            <StaggerWrapper
-              {...getTransition(allProjects.length + 2)}
-              className="w-full"
-            >
-              <Footer />
-            </StaggerWrapper>
+            <Footer />
           </article>
         </div>
       </div>

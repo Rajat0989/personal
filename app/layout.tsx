@@ -1,7 +1,7 @@
 // Next.js
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Jacques_Francois, Schibsted_Grotesk } from "next/font/google";
+import { Schibsted_Grotesk, Besley } from "next/font/google";
 
 // Third-party packages
 import { Analytics } from "@vercel/analytics/react";
@@ -18,41 +18,10 @@ const commitMono = localFont({
   display: "swap",
 });
 
-const tiemposHeadline = localFont({
-  src: "../public/fonts/TiemposHeadline-Regular.woff2",
-  variable: "--font-tiempos-headline",
-  weight: "400",
-  preload: true,
-  display: "swap",
-});
-
-const tiemposText = localFont({
-  src: [
-    {
-      path: "../public/fonts/TiemposText-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/TiemposText-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/TiemposText-Regular-Italic.woff2",
-      weight: "400",
-      style: "italic",
-    },
-  ],
-  variable: "--font-tiempos-text",
-  preload: true,
-  display: "swap",
-});
-
-const jacquesFrancois = Jacques_Francois({
-  weight: "400",
+const besley = Besley({
   subsets: ["latin"],
-  variable: "--font-jacques-francois",
+  weight: "400",
+  variable: "--font-besley",
   display: "swap",
 });
 
@@ -98,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${commitMono.variable} ${tiemposHeadline.variable} ${tiemposText.variable} ${jacquesFrancois.variable} ${schibstedGrotesk.variable} antialiased bg-background min-h-screen`}
+        className={`${commitMono.variable} ${besley.variable} ${schibstedGrotesk.variable} antialiased bg-background min-h-screen`}
       >
         {children}
         <SpeedInsights />
