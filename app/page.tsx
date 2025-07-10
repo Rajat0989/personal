@@ -59,21 +59,24 @@ function HomeContent() {
 
   return (
     <main className="page-container page-container-default">
-      <div className="flex flex-col gap-[2rem] items-center w-full">
+      <div className="flex flex-col gap-[3rem] items-center w-full">
         {/* Introduction Section */}
-        <section className="flex flex-col gap-2 w-full">
+        <section className="flex flex-col gap-1.5 w-full">
           <HeaderMain
             headerText={headerText}
             selectedButton={selectedButton}
             handleButtonClick={handleButtonClick}
           />
-
-          <div className="flex flex-col gap-2 w-full">
-            <p className="large">ueihgpierughga</p>
+          <div className="flex flex-col w-full">
+            <p className="large commit-mono tracking-tighter">
+              Rajat is a designer who loves high quality visuals and
+              interactions. He enjoys solving complex problems in creative ways
+              while keeping users at the centre of every design decision.
+            </p>
           </div>
         </section>
 
-        <div className="w-full flex flex-col gap-2">
+        <div className="w-full flex gap-[1.5rem] flex-col">
           <h2>Selected Work</h2>
           {/* Projects Grid */}
           <section className="w-full">
@@ -103,25 +106,25 @@ function HomeContent() {
                 </div>
               ))}
             </div>
-
-            <div className="w-full mt-8 flex justify-center">
-              <Link href="/archive" className="w-fit">
-                <Button
-                  variant="default"
-                  className="flex items-center justify-between gap-2 px-6 py-[0.35rem] rounded-[0.375rem] text-primary-color"
-                >
-                  <span>VIEW ALL</span>
-                  <Image
-                    src="/images/icons/arrow-right.svg"
-                    alt="Arrow Right"
-                    width={12}
-                    height={12}
-                    className="w-3 h-3 text-secondary-color transition-colors duration-400 ease-in-out"
-                  />
-                </Button>
-              </Link>
-            </div>
           </section>
+        </div>
+
+        <div className="w-full flex justify-center">
+          <Link href="/archive" className="w-fit">
+            <Button
+              variant="default"
+              className="flex items-center justify-between gap-2 px-6 py-[0.35rem] rounded-[0.375rem] text-primary-color"
+            >
+              <span>VIEW ALL</span>
+              <Image
+                src="/images/icons/arrow-right.svg"
+                alt="Arrow Right"
+                width={12}
+                height={12}
+                className="w-3 h-3 text-secondary-color transition-colors duration-400 ease-in-out"
+              />
+            </Button>
+          </Link>
         </div>
 
         <Footer />

@@ -16,20 +16,25 @@ export const allProjects: Project[] = [
     svgSrc: "/images/projectCard/chatGPT.svg",
     featured: true,
   },
+  {
+    num: "002",
+    title: "Jiogames",
+    date: "2025",
+    href: "/projects/jiogames",
+    svgSrc: "/images/projectCard/chatGPT.svg", // TODO: Replace with Jiogames image when available
+    featured: true,
+  },
 ];
 
 export const getFeaturedProjects = (): Record<string, Project[]> => {
   // Filter projects based on the featured property
   const featuredProjects = allProjects.filter((project) => project.featured);
 
-  return featuredProjects.reduce(
-    (acc, project) => {
-      if (!acc[project.date]) {
-        acc[project.date] = [];
-      }
-      acc[project.date].push(project);
-      return acc;
-    },
-    {} as Record<string, Project[]>
-  );
+  return featuredProjects.reduce((acc, project) => {
+    if (!acc[project.date]) {
+      acc[project.date] = [];
+    }
+    acc[project.date].push(project);
+    return acc;
+  }, {} as Record<string, Project[]>);
 };

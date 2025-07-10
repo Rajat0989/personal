@@ -45,7 +45,7 @@ const TabsList = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center rounded-[0.375rem] bg-fill p-[0.3125rem] sm:p-[0.375rem] lg:p-[0.4375rem] shadow-inset-tertiary",
+      "inline-flex items-center justify-center rounded-[0.375rem] bg-fill p-[0.3rem] shadow-inset-tertiary",
       className
     )}
     {...props}
@@ -74,7 +74,7 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
         className={cn(
           "relative inline-flex items-center justify-center whitespace-nowrap rounded-[0.25rem]",
           "px-[1rem]",
-          "pt-[0.3rem] pb-[0.3rem]",
+          "py-[0.2rem]",
           "commit-mono text-secondary-color transition-colors",
           "text-[1rem]",
           "hover:text-primary-color focus-visible:outline-none",

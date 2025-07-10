@@ -11,7 +11,7 @@
     --color-primary: #0f0f0f;
     --color-primary-light: #1f1f1f;
     --color-secondary: #5a5a5a;
-    --color-tertiary: #cdcdcd;
+    --color-tertiary: #d5d5d5;
 
     /* Typography */
     --font-commit-mono: "CommitMono", monospace;
@@ -21,7 +21,7 @@
     /* Font sizes */
     --font-size-small: 0.84rem;
     --font-size-default: 1.12rem;
-    --font-size-large: 1.36rem;
+    --font-size-large: 1.28rem;
     --font-size-heading: 2.48rem;
     --font-size-subheading: 1.82rem;
 
@@ -44,8 +44,8 @@
   .small {
     @apply text-small text-primary-color;
   }
-  .large{
-    @apply text-large text-primary-color
+  .large {
+    @apply text-large text-primary-color;
   }
   .commit-mono {
     font-family: var(--font-commit-mono);
