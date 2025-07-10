@@ -9,9 +9,9 @@ import Image from "next/image";
 import { getFeaturedProjects } from "@/lib/data/projectData";
 
 // Local components
-import { Button } from "@/components/ui/button";
-import Footer from "@/components/ui/footer";
-import HeaderMain from "@/components/ui/header";
+// import { Button } from "@/components/ui/button";
+// import Footer from "@/components/ui/footer";
+// import HeaderMain from "@/components/ui/header";
 
 function HomeContent() {
   const projectData = getFeaturedProjects();
@@ -58,9 +58,8 @@ function HomeContent() {
   };
 
   return (
-    <main className="page-container page-container-default">
-      <div className="flex flex-col gap-[3rem] items-center w-full">
-        {/* Introduction Section */}
+    <main className="min-h-screen flex justify-center items-end">
+      {/*<div className="flex flex-col gap-[3rem] items-center w-full">
         <section className="flex flex-col gap-1.5 w-full">
           <HeaderMain
             headerText={headerText}
@@ -78,7 +77,6 @@ function HomeContent() {
 
         <div className="w-full flex gap-[1.5rem] flex-col">
           <h2>Selected Work</h2>
-          {/* Projects Grid */}
           <section className="w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
               {featuredProjects.map((project, index) => (
@@ -128,7 +126,8 @@ function HomeContent() {
         </div>
 
         <Footer />
-      </div>
+      </div>*/}
+      <Image src="/images/me.png" alt="" width={325} height={400} />
     </main>
   );
 }
