@@ -9,7 +9,7 @@ import Breadcrumbs from "@/components/ui/breadcrumbs";
 import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 
-export default function Jiogames() {
+function JiogamesContent() {
   const searchParams = useSearchParams();
   const fromAllWorks = searchParams.get("from") === "all-works";
 
@@ -241,5 +241,13 @@ export default function Jiogames() {
         </article>
       </div>
     </main>
+  );
+}
+
+export default function JioGames() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <JiogamesContent />
+    </Suspense>
   );
 }
