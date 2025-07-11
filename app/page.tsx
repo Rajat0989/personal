@@ -14,48 +14,48 @@ import { getFeaturedProjects } from "@/lib/data/projectData";
 // import HeaderMain from "@/components/ui/header";
 
 function HomeContent() {
-  const projectData = getFeaturedProjects();
-  const years = Object.keys(projectData).sort((a, b) => Number(b) - Number(a));
+  // const projectData = getFeaturedProjects();
+  // const years = Object.keys(projectData).sort((a, b) => Number(b) - Number(a));
 
-  // Get featured projects in a flat array
-  const featuredProjects = years.flatMap((year) =>
-    projectData[year].map((project) => ({
-      ...project,
-      year,
-    }))
-  );
+  // // Get featured projects in a flat array
+  // const featuredProjects = years.flatMap((year) =>
+  //   projectData[year].map((project) => ({
+  //     ...project,
+  //     year,
+  //   }))
+  // );
 
-  const [selectedButton, setSelectedButton] = useState<string>("home");
-  const router = useRouter();
-  const [headerText, setHeaderText] = useState("Hey, I'm Rajat.");
+  // const [selectedButton, setSelectedButton] = useState<string>("home");
+  // const router = useRouter();
+  // const [headerText, setHeaderText] = useState("Hey, I'm Rajat.");
 
-  useEffect(() => {
-    setSelectedButton("home");
-  }, []);
+  // useEffect(() => {
+  //   setSelectedButton("home");
+  // }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== "undefined") {
-        setHeaderText(window.innerWidth <= 470 ? "Rajat." : "Hey, I'm Rajat.");
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (typeof window !== "undefined") {
+  //       setHeaderText(window.innerWidth <= 470 ? "Rajat." : "Hey, I'm Rajat.");
+  //     }
+  //   };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
-  const handleButtonClick = (buttonName: string) => {
-    setSelectedButton(buttonName);
-    switch (buttonName) {
-      case "projects":
-        router.push("/archive");
-        break;
-      case "about":
-        router.push("/about");
-        break;
-    }
-  };
+  // const handleButtonClick = (buttonName: string) => {
+  //   setSelectedButton(buttonName);
+  //   switch (buttonName) {
+  //     case "projects":
+  //       router.push("/archive");
+  //       break;
+  //     case "about":
+  //       router.push("/about");
+  //       break;
+  //   }
+  // };
 
   return (
     <main className="min-h-screen flex justify-center items-end">
