@@ -9,57 +9,61 @@ import Image from "next/image";
 import { getFeaturedProjects } from "@/lib/data/projectData";
 
 // Local components
-// import { Button } from "@/components/ui/button";
-// import Footer from "@/components/ui/footer";
-// import HeaderMain from "@/components/ui/header";
+import { Button } from "@/components/ui/button";
+import Footer from "@/components/ui/footer";
+import HeaderMain from "@/components/ui/header";
 
 function HomeContent() {
-  // const projectData = getFeaturedProjects();
-  // const years = Object.keys(projectData).sort((a, b) => Number(b) - Number(a));
+  const projectData = getFeaturedProjects();
+  const years = Object.keys(projectData).sort((a, b) => Number(b) - Number(a));
 
-  // // Get featured projects in a flat array
-  // const featuredProjects = years.flatMap((year) =>
-  //   projectData[year].map((project) => ({
-  //     ...project,
-  //     year,
-  //   }))
-  // );
+  // Get featured projects in a flat array
+  const featuredProjects = years.flatMap((year) =>
+    projectData[year].map((project) => ({
+      ...project,
+      year,
+    }))
+  );
 
-  // const [selectedButton, setSelectedButton] = useState<string>("home");
-  // const router = useRouter();
-  // const [headerText, setHeaderText] = useState("Hey, I'm Rajat.");
+  const [selectedButton, setSelectedButton] = useState<string>("home");
+  const router = useRouter();
+  const [headerText, setHeaderText] = useState("Hey, I'm Rajat.");
 
-  // useEffect(() => {
-  //   setSelectedButton("home");
-  // }, []);
+  useEffect(() => {
+    setSelectedButton("home");
+  }, []);
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (typeof window !== "undefined") {
-  //       setHeaderText(window.innerWidth <= 470 ? "Rajat." : "Hey, I'm Rajat.");
-  //     }
-  //   };
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setHeaderText(window.innerWidth <= 470 ? "Rajat." : "Hey, I'm Rajat.");
+      }
+    };
 
-  //   handleResize();
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  // const handleButtonClick = (buttonName: string) => {
-  //   setSelectedButton(buttonName);
-  //   switch (buttonName) {
-  //     case "projects":
-  //       router.push("/archive");
-  //       break;
-  //     case "about":
-  //       router.push("/about");
-  //       break;
-  //   }
-  // };
+  const handleButtonClick = (buttonName: string) => {
+    setSelectedButton(buttonName);
+    switch (buttonName) {
+      case "projects":
+        router.push("/archive");
+        break;
+      case "about":
+        router.push("/about");
+        break;
+    }
+  };
 
   return (
-    <main className="min-h-screen flex justify-center items-end">
-      {/*<div className="flex flex-col gap-[3rem] items-center w-full">
+    <main className="">
+      <div className="h-screen flex justify-center items-end">
+        <Image src="/images/me.png" alt="" width={325} height={400} />
+      </div>
+
+      {/* <div className="flex flex-col gap-[3rem] items-center w-full">
         <section className="flex flex-col gap-1.5 w-full">
           <HeaderMain
             headerText={headerText}
@@ -127,15 +131,10 @@ function HomeContent() {
 
         <Footer />
       </div>*/}
-      <Image src="/images/me.png" alt="" width={325} height={400} />
     </main>
   );
 }
 
 export default function Home() {
-  return (
-    <Suspense fallback={null}>
-      <HomeContent />
-    </Suspense>
-  );
+  return <Suspense fallback={null}>{<HomeContent />}</Suspense>;
 }
