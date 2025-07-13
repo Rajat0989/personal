@@ -58,12 +58,8 @@ function HomeContent() {
   };
 
   return (
-    <main className="">
-      <div className="h-screen flex justify-center items-end">
-        <Image src="/images/me.png" alt="" width={325} height={400} />
-      </div>
-
-      {/* <div className="flex flex-col gap-[3rem] items-center w-full">
+    <main className="page-container page-container-default">
+      <div className="flex flex-col gap-[3rem] items-center w-full">
         <section className="flex flex-col gap-1.5 w-full">
           <HeaderMain
             headerText={headerText}
@@ -71,7 +67,7 @@ function HomeContent() {
             handleButtonClick={handleButtonClick}
           />
           <div className="flex flex-col w-full">
-            <p className="large commit-mono tracking-tighter">
+            <p className="large tracking-normal">
               Rajat is a designer who loves high quality visuals and
               interactions. He enjoys solving complex problems in creative ways
               while keeping users at the centre of every design decision.
@@ -97,11 +93,9 @@ function HomeContent() {
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
                       </div>
-                      <div className="flex flex-col">
-                        <p className="commit-mono text-xl">{project.title}</p>
-                        <p className="text-sm text-secondary-color">
-                          {project.date}
-                        </p>
+                      <div className="flex justify-between text-xl px-3">
+                        <p className="commit-mono">{project.title}</p>
+                        <p className="commit-mono">{project.date}</p>
                       </div>
                     </div>
                   </Link>
@@ -118,19 +112,12 @@ function HomeContent() {
               className="flex items-center justify-between gap-2 px-6 py-[0.35rem] rounded-[0.375rem] text-primary-color"
             >
               <span>VIEW ALL</span>
-              <Image
-                src="/images/icons/arrow-right.svg"
-                alt="Arrow Right"
-                width={12}
-                height={12}
-                className="w-3 h-3 text-secondary-color transition-colors duration-400 ease-in-out"
-              />
             </Button>
           </Link>
         </div>
 
         <Footer />
-      </div>*/}
+      </div>
     </main>
   );
 }

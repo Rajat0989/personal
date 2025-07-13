@@ -50,11 +50,11 @@ function JiogamesContent() {
         <article className="w-full flex flex-col gap-8">
           <section className="flex flex-col gap-3.5">
             <h1>
-              Designing organization and collaboration features for ChatGPT
+              Redesigning JioGames Cloud Platform
             </h1>
             <p className="large">
               From May to July 2025 , as a self-initiated project, I redesigned
-              JioGames Cloud Platform
+              JioGames Cloud Platform to Improve User Retention.
             </p>
           </section>
 
@@ -195,6 +195,14 @@ function JiogamesContent() {
                 </p>
               </section>
               <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
+            </>
+          )}
+
+          {isAuthenticated && (
+            <>
+              <section className="flex flex-col gap-2.5">
+                <h2>More coming soon.......</h2>
+              </section>
             </>
           )}
 

@@ -41,7 +41,33 @@ function AboutContent() {
           <Breadcrumbs crumbs={crumbs} />
 
           <article className="w-full flex flex-col gap-[5rem]">
-            {/* Content removed */}
+            <section className="flex flex-col gap-2">
+              <p className="large">
+                I am a final-year Computer Science student who loves
+                high-quality visual and interaction design.
+              </p>
+              <p className="large">
+                Growing up, I was naturally drawn to understanding how things
+                worked and looked. This curiosity about both form and function
+                laid the foundation for my love of design.
+              </p>
+              <p className="large">
+                In university, I design as the perfect intersection of my
+                technical background and creative aspirations. My journey began
+                with exploring how beautiful interfaces could solve real
+                problems, developing empathy for users, and mastering design
+                processes that prioritize both form and function.
+              </p>
+              <p className="large">
+                Outside of design, I enjoy cooking and playing badminton. These
+                pursuits keep me grounded and energized.
+              </p>
+              <p className="large">
+                I'm excited to create digital experiences that are both
+                beautiful and meaningful, making technology more intuitive and
+                accessible for everyone.
+              </p>
+            </section>
           </article>
 
           <Footer />

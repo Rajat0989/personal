@@ -381,6 +381,14 @@ function ChatGPTContent() {
           {isAuthenticated && (
             <>
               <section className="flex flex-col gap-2.5">
+                <h2>More coming soon........</h2>
+              </section>
+            </>
+          )}
+
+          {/* {isAuthenticated && (
+            <>
+              <section className="flex flex-col gap-2.5">
                 <h2>User Flow</h2>
                 <p className="large">
                   I crafted a user flow illustrating the various paths users
@@ -489,7 +497,7 @@ function ChatGPTContent() {
                 </ul>
               </section>
             </>
-          )}
+          )} */}
 
           {!isAuthenticated && (
             <section className="flex flex-col gap-2 items-start w-full border-tertiary-color border-[0.063rem] rounded-lg p-6 bg-white shadow-inset-tertiary">

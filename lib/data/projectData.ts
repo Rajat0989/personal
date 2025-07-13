@@ -21,7 +21,7 @@ export const allProjects: Project[] = [
     title: "Jiogames",
     date: "2025",
     href: "/projects/jiogames",
-    svgSrc: "/images/projectCard/chatGPT.svg", // TODO: Replace with Jiogames image when available
+    svgSrc: "/images/projectCard/jiogames.svg",
     featured: true,
   },
 ];

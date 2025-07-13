@@ -33,8 +33,7 @@ const schibstedGrotesk = Schibsted_Grotesk({
 
 export const metadata: Metadata = {
   title: "Rajat Chandarana",
-  description:
-    "Rajat Chandarana's portfolio showcasing product design work and writing about growth",
+  description: "Rajat Chandarana's portfolio showcasing product design work",
   icons: {
     icon: [{ url: "/favicon/favicon.ico", sizes: "32x32" }],
     other: [
@@ -44,18 +43,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Rajat Chandarana",
-    description:
-      "Rajat Chandarana's portfolio showcasing product design work and writing about growth",
+    description: "Rajat Chandarana's portfolio showcasing product design work",
     url: "https://rajatchandarana.com",
     siteName: "Rajat Chandarana",
-    images: [
-      {
-        url: "/images/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Rajat Chandarana Portfolio",
-      },
-    ],
+    // images: [
+    //   {
+    //     url: "/images/og.png",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "Rajat Chandarana Portfolio",
+    //   },
+    // ],
   },
 };
 

@@ -72,6 +72,11 @@
     margin: 0 auto;
     padding: 12vh 3rem 4vh;
   }
+  @media (max-width: 440px) {
+    .page-container {
+      padding: 4vh 1rem 3vh;
+    }
+  }
   .page-container-default {
     max-width: calc(var(--max-width-default) + 6rem);
   }
