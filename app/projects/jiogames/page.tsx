@@ -45,33 +45,30 @@ function JiogamesContent() {
 
   return (
     <main className="page-container page-container-default project-page">
-      <div className="flex flex-col gap-4 items-start w-full mx-auto">
-        <Breadcrumbs crumbs={crumbs} />
+      <div className="flex flex-col gap-4 items-start w-full mx-auto font-azeret-mono text-large">
+        coming soon.....
+        {/* <Breadcrumbs crumbs={crumbs} />
         <article className="w-full flex flex-col gap-8">
           <section className="flex flex-col gap-3.5">
-            <h1>
-              Redesigning JioGames Cloud Platform
-            </h1>
-            <p className="large">
+            <h1>Redesigning JioGames Cloud Platform</h1>
+            <p className="text-large">
               From May to July 2025 , as a self-initiated project, I redesigned
               JioGames Cloud Platform to Improve User Retention.
             </p>
           </section>
 
-          <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
-
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>Understanding the Problem</h2>
-                <p className="large">
+              <section className="flex flex-col gap-4">
+                <h3>Understanding the Problem</h3>
+                <p>
                   During my personal observations of JioGames Cloud, I found
                   that while the platform offers impressive technical
                   capabilities such as streaming console-quality games to any
                   device, the user interface creates unnecessary barriers to
                   game discovery, engagement, and overall satisfaction.
                 </p>
-                <p className="large">
+                <p>
                   The usability issues on JioGames Cloud weren't limited to
                   individual pages but spanned the entire user journey. From
                   landing on the homepage to searching for a game, users faced
@@ -81,20 +78,19 @@ function JiogamesContent() {
                   retention and growth.
                 </p>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>Research</h2>
-                <p className="large">
+              <section className="flex flex-col gap-4">
+                <h3>Research</h3>
+                <p>
                   Before diving into detailed analysis, I conducted extensive
                   secondary research to understand the cloud gaming landscape
                   and user expectations in this space.
                 </p>
-                <p className="large">
+                <p>
                   I analyzed competitor platforms including{" "}
                   <a
                     href="https://www.xbox.com/en-US/play"
@@ -125,21 +121,20 @@ function JiogamesContent() {
                   to understand industry standards for game discovery,
                   subscription models, and user interface patterns.
                 </p>
-                <p className="large">
+                <p>
                   This research established a clear benchmark for what JioGames
                   Cloud needed to achieve to compete effectively in the cloud
                   gaming market.
                 </p>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>Heuristic Evaluation</h2>
-                <p className="large">
+              <section className="flex flex-col gap-4">
+                <h3>Heuristic Evaluation</h3>
+                <p>
                   I conducted a comprehensive heuristic evaluation using
                   Nielsen's 10 usability heuristics across seven key sections:
                   Homepage and category sections, Game detail pages, Game
@@ -187,21 +182,20 @@ function JiogamesContent() {
                     priority
                   />
                 </div>
-                <p className="large">
+                <p>
                   This systematic approach ensured that I wasn't just
                   identifying surface-level problems but understanding the
                   underlying UX principles that were being violated and how they
                   impact user behavior.
                 </p>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>More coming soon.......</h2>
+              <section className="flex flex-col gap-4">
+                <h3>More coming soon.......</h3>
               </section>
             </>
           )}
@@ -209,7 +203,7 @@ function JiogamesContent() {
           {!isAuthenticated && (
             <section className="flex flex-col gap-2 items-start w-full border-tertiary-color border-[0.063rem] rounded-lg p-6 bg-white shadow-inset-tertiary">
               <div>
-                <p className="large">
+                <p>
                   Above is a brief overview of my work. Please enter the
                   password to access the full case study.
                 </p>
@@ -246,7 +240,7 @@ function JiogamesContent() {
           <section>
             <Footer />
           </section>
-        </article>
+        </article> */}
       </div>
     </main>
   );

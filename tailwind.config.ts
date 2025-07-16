@@ -13,6 +13,7 @@ const config: Config = {
         small: ["var(--font-size-small)", "var(--line-height-body)"],
         default: ["var(--font-size-body)", "var(--line-height-body)"],
         large: ["var(--font-size-large)", "var(--line-height-body)"],
+        extra: ["var(--font-size-extralarge)", "var(--line-height-subheading)"],
         heading: ["var(--font-size-heading)", "var(--line-height-headings)"],
         subheading: [
           "var(--font-size-subheading)",
@@ -30,8 +31,8 @@ const config: Config = {
       },
 
       fontFamily: {
-        "commit-mono": ["var(--font-commit-mono)", "monospace"],
-        besley: ["var(--font-besley)", "serif"],
+        "azeret-mono": ["var(--font-azeret-mono)", "monospace"],
+        prata: ["var(--font-prata)", "serif"],
         schibsted: ["var(--font-schibsted-grotesk)", "sans"],
       },
       letterSpacing: {

@@ -75,7 +75,7 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
           "relative inline-flex items-center justify-center whitespace-nowrap rounded-[0.25rem]",
           "px-[1rem]",
           "py-[0.2rem]",
-          "commit-mono text-secondary-color transition-colors",
+          "font-azeret-mono text-secondary-color transition-colors",
           "text-[1rem]",
           "hover:text-primary-color focus-visible:outline-none",
           "data-[state=active]:text-primary-color",

@@ -10,51 +10,40 @@
     --color-fill: #f3f3f3;
     --color-primary: #0f0f0f;
     --color-primary-light: #1f1f1f;
-    --color-secondary: #5a5a5a;
+    --color-secondary: #333333;
     --color-tertiary: #d5d5d5;
 
     /* Typography */
-    --font-commit-mono: "CommitMono", monospace;
-    --font-besley: "Besley", serif;
+    --font-azeret-mono: "Azeret Mono", monospace;
+    --font-prata: "Prata", serif;
     --font-schibsted-grotesk: "Schibsted Grotesk", sans-serif;
 
     /* Font sizes */
     --font-size-small: 0.84rem;
-    --font-size-default: 1.12rem;
+    --font-size-default: 1.14rem;
     --font-size-large: 1.28rem;
+    --font-size-extralarge: 1.52rem;
     --font-size-heading: 2.48rem;
-    --font-size-subheading: 1.82rem;
+    --font-size-subheading: 2.12rem;
 
     --line-height-body: 1.5;
     --line-height-headings: 1.35;
 
     /* Layout */
-    --max-width-default: 60rem;
+    --max-width-default: 52rem;
   }
 
   h1 {
-    @apply text-heading font-besley font-medium text-primary-color tracking-tight;
+    @apply text-heading font-schibsted font-medium text-primary-color tracking-tight;
   }
   h2 {
-    @apply text-subheading font-besley font-medium text-primary-color tracking-tight;
+    @apply text-subheading font-schibsted font-medium text-secondary-color tracking-tight;
+  }
+  h3 {
+    @apply text-extra font-schibsted font-medium text-secondary-color tracking-tight;
   }
   p {
-    @apply text-default font-schibsted text-primary-color tracking-tight;
-  }
-  .small {
-    @apply text-small text-primary-color;
-  }
-  .large {
-    @apply text-large text-primary-color;
-  }
-  .commit-mono {
-    font-family: var(--font-commit-mono);
-  }
-  .besley {
-    font-family: var(--font-besley);
-  }
-  .schibsted-grotesk {
-    font-family: var(--font-schibsted-grotesk);
+    @apply text-default font-schibsted text-secondary-color;
   }
   ::selection {
     background-color: var(--color-select);
@@ -70,7 +59,7 @@
   .page-container {
     width: 100%;
     margin: 0 auto;
-    padding: 12vh 3rem 4vh;
+    padding: 8vh 3rem 4vh;
   }
   @media (max-width: 440px) {
     .page-container {
@@ -81,14 +70,14 @@
     max-width: calc(var(--max-width-default) + 6rem);
   }
   .link-underline,
-  .commit-mono a.link-underline,
+  .azeret-mono a.link-underline,
   .timepose a.link-underline {
     text-decoration: none;
     border-bottom: 2px dotted var(--color-secondary);
     transition: border-color 0.3s ease;
   }
   .link-underline-hover,
-  .commit-mono a.link-underline:hover,
+  .azeret-mono a.link-underline:hover,
   .timepose a.link-underline:hover {
     border-bottom: 2px dotted transparent;
   }

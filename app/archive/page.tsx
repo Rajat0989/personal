@@ -14,7 +14,6 @@ import { allProjects } from "@/lib/data/projectData";
 export default function Archive() {
   const router = useRouter();
   const [selectedButton, setSelectedButton] = useState<string>("projects");
-  const [headerText, setHeaderText] = useState("Hey, I'm Rajat.");
 
   // Group projects by year
   const projectsByYear = useMemo(() => {
@@ -35,7 +34,7 @@ export default function Archive() {
   useEffect(() => {
     const handleResize = () => {
       if (typeof window !== "undefined") {
-        setHeaderText(window.innerWidth <= 470 ? "Rajat." : "Hey, I'm Rajat.");
+        // setHeaderText(window.innerWidth <= 470 ? "Rajat." : "Hey, I'm Rajat.");
       }
     };
 
@@ -58,53 +57,45 @@ export default function Archive() {
 
   return (
     <main className="page-container page-container-default">
-      <div className="flex flex-col gap-2 items-center w-full">
+      <div className="flex flex-col gap-[2.5rem] items-center w-full">
         <section className="flex flex-col gap-2 w-full">
           <HeaderMain
-            headerText={headerText}
             selectedButton={selectedButton}
             handleButtonClick={handleButtonClick}
           />
+          <Breadcrumbs crumbs={[{ label: "ALL WORKS" }]} />
         </section>
 
-        <div className="flex flex-col gap-4 items-start w-full mx-auto">
-          <Breadcrumbs crumbs={[{ label: "ALL WORKS" }]} />
-
-          <article className="w-full flex flex-col gap-[5rem]">
-            <section className="flex flex-col gap-[3rem]">
-              {sortedYears.map((year, yearIndex) => (
-                <div key={year} className="flex flex-col gap-[1.5rem]">
-                  <h2 className="text-4xl text-primary-color">{year}</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-                    {projectsByYear[year].map((project, projectIndex) => (
-                      <Link
-                        key={project.num}
-                        href={project.href}
-                        className="flex flex-col gap-2 w-full group"
-                      >
-                        <div className="w-full relative overflow-hidden rounded-[0.375rem] inner-shadow-tertiary">
-                          <Image
-                            src={project.svgSrc}
-                            alt={project.title}
-                            width={1200}
-                            height={800}
-                            className="w-full h-auto"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                          />
-                        </div>
-                        <div className="flex flex-col">
-                          <p className="commit-mono text-xl">{project.title}</p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+        <article className="w-full">
+          <section className="flex flex-col gap-[3rem]">
+            {sortedYears.map((year, yearIndex) => (
+              <div key={year} className="flex flex-col gap-4">
+                <h2 className="text-4xl text-primary-color">{year}</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                  {projectsByYear[year].map((project, projectIndex) => (
+                    <Link
+                      key={project.num}
+                      href={project.href}
+                      className="flex flex-col gap-2 w-full group"
+                    >
+                      <div className="w-full relative overflow-hidden rounded-[0.375rem] inner-shadow-tertiary">
+                        <Image
+                          src={project.svgSrc}
+                          alt={project.title}
+                          width={1200}
+                          height={800}
+                          className="w-full border border-tertiary-color rounded-md shadow-md"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </div>
+                    </Link>
+                  ))}
                 </div>
-              ))}
-            </section>
-
-            <Footer />
-          </article>
-        </div>
+              </div>
+            ))}
+          </section>
+        </article>
+        <Footer />
       </div>
     </main>
   );

@@ -1,7 +1,6 @@
 // Next.js
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Schibsted_Grotesk, Besley } from "next/font/google";
+import { Schibsted_Grotesk, Prata, Azeret_Mono } from "next/font/google";
 
 // Third-party packages
 import { Analytics } from "@vercel/analytics/react";
@@ -10,18 +9,17 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 // Local styles
 import "./globals.css";
 
-const commitMono = localFont({
-  src: "../public/fonts/CommitMono.woff2",
-  variable: "--font-commit-mono",
-  weight: "450",
-  preload: true,
+const azeretMono = Azeret_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-azeret-mono",
   display: "swap",
 });
 
-const besley = Besley({
+const prata = Prata({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-besley",
+  variable: "--font-prata",
   display: "swap",
 });
 
@@ -65,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${commitMono.variable} ${besley.variable} ${schibstedGrotesk.variable} antialiased bg-background min-h-screen`}
+        className={`${azeretMono.variable} ${prata.variable} ${schibstedGrotesk.variable} antialiased bg-background min-h-screen`}
       >
         {children}
         <SpeedInsights />

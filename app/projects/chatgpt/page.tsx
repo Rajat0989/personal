@@ -60,17 +60,11 @@ function ChatGPTContent() {
     >
       <div className="flex flex-col gap-4 items-start w-full mx-auto">
         <Breadcrumbs crumbs={crumbs} />
-        <article className="w-full flex flex-col gap-[3.5rem]">
+        <article className="w-full flex flex-col gap-[4rem]">
           <section className="flex flex-col gap-3.5">
-            <h1>
+            <h2>
               Designing organization and collaboration features for ChatGPT
-            </h1>
-            <p className="large">
-              From February to April 2025 , as a self-initiated project, I
-              designed intelligent organization and collaboration features that
-              transforms ChatGPT from a disposable chat tool into a persistent
-              knowledge platform.
-            </p>
+            </h2>
             <div className="w-full border rounded-[0.375rem]">
               <Image
                 src="/images/chatgpt/main.png"
@@ -81,95 +75,108 @@ function ChatGPTContent() {
                 priority
               />
             </div>
+            <p className="text-large">
+              From February to April 2025 , as a self-initiated project, I
+              designed intelligent organization and collaboration features that
+              transforms ChatGPT from a disposable chat tool into a persistent
+              knowledge platform.
+            </p>
           </section>
 
-          <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
-
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>Understanding the Problem</h2>
-                <p className="large">
-                  After months of daily ChatGPT use, I noticed a growing
-                  problem: valuable conversations and ideas were getting lost in
-                  an unorganized list of chats. Finding something even from last
-                  week became frustrating. Collaborating with classmates made
-                  things worse; we had to share screenshots through email or
-                  whatsapp, with no way to work together in real time or build
-                  shared knowledge.
+              <section className="flex flex-col gap-4">
+                <h3>Understanding the Problem</h3>
+                <p>
+                  After several months of using ChatGPT almost daily, I started
+                  noticing frustrating patterns that extended beyond my personal
+                  workflow.
                 </p>
-                <p className="large">
-                  It became clear that while ChatGPT is great for creating
-                  content, it falls short in helping users manage, retrieve, and
-                  collaborate on it. I set out to see if others shared these
-                  struggles too.
-                </p>
+                <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-2">
+                  <p className="md:col-span-21 h-full flex flex-col justify-center">
+                    Important conversations, breakthrough ideas, and valuable
+                    prompts were getting buried in an endless list of chats.
+                    Finding something useful even from just a week ago became
+                    increasingly difficult and time consuming.
+                  </p>
+                  <div className="md:col-span-3">
+                    <video
+                      src="/video/problem.mp4"
+                      muted
+                      loop
+                      autoPlay
+                      className="max-w-full h-full object-cover border border-tertiary-color rounded-md shadow-md"
+                      style={{ minWidth: "240px", minHeight: "180px" }}
+                    ></video>
+                  </div>
+                </div>
+                <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-2">
+                  <div className="md:col-span-2">
+                    <Image
+                      src="/images/chatgpt/share.png"
+                      alt="ChatGPT main interface"
+                      width={1200}
+                      height={675}
+                      style={{ width: "100%", height: "auto" }}
+                      className="border border-tertiary-color rounded-md shadow-md"
+                      priority
+                    />
+                  </div>
+                  <p className="md:col-span-2 h-full flex flex-col justify-center">
+                    ChatGPT's collaboration limitations were equally
+                    frustrating. We'd end up sharing individual chat screenshots
+                    through email or WhatsApp, but couldn't work together in
+                    real-time or build shared knowledge bases.
+                  </p>
+                </div>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>Secondary Research</h2>
-                <p className="large">
-                  Before diving into primary research, I explored the broader
-                  landscape through forums, Reddit, Twitter, and user community
-                  feedback. The same frustrations came up repeatedly: users
-                  struggled to organize chats, lost important conversations, and
-                  couldn’t collaborate effectively. Many resorted to workarounds
-                  sharing screenshots, copying content to external docs, or
-                  juggling multiple tools.
-                </p>
-                <p className="large">
-                  This secondary research confirmed that these weren’t isolated
-                  issues, but widespread problems worth solving.
-                </p>
-              </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
-            </>
-          )}
-
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-2.5">
-                <h2>User Survey</h2>
-                <p className="large">
+              <section className="flex flex-col gap-4">
+                <h3>User Survey</h3>
+                <p>
                   To quantify the problem and validate my observations, I
                   conducted a targeted survey with 29 ChatGPT users, focusing
                   specifically on chat usage, management behaviors, and
                   collaboration patterns.
                 </p>
-                <div className="w-full">
-                  <Image
-                    src="/images/chatgpt/survey.png"
-                    alt="ChatGPT main interface"
-                    width={1200}
-                    height={675}
-                    style={{ width: "100%", height: "auto" }}
-                    priority
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 border border-tertiary-color rounded-lg p-4 shadow-md">
+                  <p>
+                    <span className="text-2xl">68%</span> of users regularly
+                    revisit old conversations for reference
+                  </p>
+                  <p>
+                    <span className="text-2xl">72%</span> find it difficult to
+                    locate specific past chats
+                  </p>
+                  <p>
+                    <span className="text-2xl">62%</span> have lost useful
+                    prompts or responses they wanted to reuse
+                  </p>
+                  <p>
+                    <span className="text-2xl">59%</span> are frustrated due to
+                    lack of collaboration feature inside ChatGPT
+                  </p>
                 </div>
-                <p className="large">
+                <p>
                   These numbers confirmed that problems were widespread,
                   impactful, and interconnected.
                 </p>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>User Interview</h2>
-                <p className="large">
+              <section className="flex flex-col gap-4">
+                <h3>User Interview</h3>
+                <p>
                   Following the survey, I conducted deeper interviews with 8
                   users representing different demographics and use cases to
-                  gain richer insights into their specific challenges. Based on
-                  the user interviews, I created empathy maps to better
-                  understand users' emotional and cognitive states.
+                  gain richer insights into their specific challenges.
                 </p>
                 <div className="w-full">
                   <Image
@@ -177,26 +184,20 @@ function ChatGPTContent() {
                     alt="ChatGPT main interface"
                     width={1200}
                     height={675}
+                    className="border border-tertiary-color rounded-md shadow-md p-2"
                     style={{ width: "100%", height: "auto" }}
                     priority
                   />
                 </div>
-                <p className="large">
-                  These interviews revealed that users had developed inefficient
-                  workarounds for both organization and collaboration,
-                  suggesting the problems were both universal and costly in
-                  terms of productivity.
-                </p>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>Persona</h2>
-                <p className="large">
+              <section className="flex flex-col gap-4">
+                <h3>Persona</h3>
+                <p>
                   Based on my research findings, I created a primary persona
                   that represents the segment that relies heavily on ChatGPT.
                 </p>
@@ -207,19 +208,19 @@ function ChatGPTContent() {
                     width={1200}
                     height={675}
                     style={{ width: "100%", height: "auto" }}
+                    className="border border-tertiary-color rounded-md shadow-md p-2"
                     priority
                   />
                 </div>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>User Journey Map</h2>
-                <p className="large">
+              <section className="flex flex-col gap-4">
+                <h3>User Journey Map</h3>
+                <p>
                   Mapped the user's complete interaction cycle with ChatGPT to
                   understand their end-to-end experience, emotions, and pain
                   points at each stage. This revealed critical moments of
@@ -233,67 +234,71 @@ function ChatGPTContent() {
                     alt="ChatGPT main interface"
                     width={1200}
                     height={675}
+                    className="border border-tertiary-color rounded-md shadow-md p-2"
                     style={{ width: "100%", height: "auto" }}
                     priority
                   />
                 </div>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>Pain Points</h2>
-                <p className="large">
-                  Based on my research, I identified three critical pain points:
-                </p>
-                <p className="large">
-                  → Users struggle to find past conversations because ChatGPT
-                  provides no organizational structure.
-                  <br />→ There's no way to save valuable prompts or responses
-                  for future use.
-                  <br />→ ChatGPT only allows sharing individual chats, making
-                  team collaboration difficult.
-                </p>
+              <section className="flex flex-col gap-4">
+                <h3>Pain Points</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border border-tertiary-color p-4 rounded-md shadow-md">
+                  <p className="bg-[#dc3b2215] p-2 rounded-sm border border-[#dc3b22] text-primary-color">
+                    Users struggle to find past conversations because ChatGPT
+                    provides no organizational structure.
+                  </p>
+                  <p className="bg-[#dc3b2215] p-2 rounded-sm border border-[#dc3b22] text-primary-color">
+                    There's no way to save valuable prompts or responses for
+                    future use.
+                  </p>
+                  <p className="bg-[#dc3b2215] p-2 rounded-sm border border-[#dc3b22] text-primary-color">
+                    ChatGPT only allows sharing individual chats, making team
+                    collaboration difficult.
+                  </p>
+                </div>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>Problem & Goal</h2>
-                <p className="large">
-                  To define the{" "}
-                  <span className="text-[#DC3C22] font-medium">problem</span>,
-                  users struggle to manage important chats and prompts leading
-                  to lost information, repeated work, and unnecessary friction.
-                </p>
-                <p className="large">
-                  And our{" "}
-                  <span className="text-[#06923E] font-medium">goal</span> is to
-                  make it easier for users to keep track of important chats and
-                  prompts by giving them better ways to organize and save the
-                  content that matters.
-                </p>
+              <section className="flex flex-col gap-4">
+                <h3>Problem & Goal</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 border border-tertiary-color p-6 rounded-md shadow-md">
+                  <p>
+                    To define the{" "}
+                    <span className="text-[#DC3C22] font-medium">problem</span>,
+                    users struggle to manage important chats and prompts leading
+                    to lost information, repeated work, and unnecessary
+                    friction.
+                  </p>
+                  <p>
+                    And our{" "}
+                    <span className="text-[#06923E] font-medium">goal</span> is
+                    to make it easier for users to keep track of important chats
+                    and prompts by giving them better ways to organize and save
+                    the content that matters.
+                  </p>
+                </div>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>Solution Exploration</h2>
-                <p className="large">
+              <section className="flex flex-col gap-4">
+                <h3>Solution Exploration</h3>
+                <p>
                   To explore potential solutions, I developed "How Might We"
                   questions to avoid rushing into design decisions prematurely
                   and ensure I was thinking broadly about the problem space.
                 </p>
-                <p className="large">
+                <p>
                   → How might we help users quickly locate valuable past
                   conversations?
                   <br />
@@ -302,11 +307,11 @@ function ChatGPTContent() {
                   <br />→ How might we facilitate easy prompt saving and reuse?
                   <br />→ How might we enable seamless collaboration for teams?
                 </p>
-                <p className="large">
+                <p>
                   These questions kept my design process focused and
                   user-centered while exploring creative solutions.
                 </p>
-                <p className="large">
+                <p>
                   I explored several approaches and also analyzed how
                   competitors were handling chat organization. I looked at
                   Google's{" "}
@@ -345,43 +350,24 @@ function ChatGPTContent() {
                   >
                     Perplexity AI
                   </a>{" "}
-                  to understand the current landscape.
+                  to understand the current landscape. At the time, Perplexity
+                  AI was the only competitor with their own solution for chat
+                  management called "Spaces." Additionally, none of these
+                  platforms had a solution for saving and reusing prompts,
+                  collaboration.
                 </p>
-                <div className="w-full">
-                  <Image
-                    src="/images/chatgpt/others.png"
-                    alt="ChatGPT main interface"
-                    width={1200}
-                    height={675}
-                    style={{ width: "100%", height: "auto" }}
-                    priority
-                  />
-                </div>
-                <p className="large">
-                  I explored several approaches and also analyzed how
-                  competitors were handling this problem. I looked at Google's
-                  Gemini, X's Grok, Anthropic's Claude, and Perplexity AI to
-                  understand the current competitive landscape.
-                </p>
-                <p className="large">
-                  At the time, Perplexity AI was the only competitor with their
-                  own solution for chat management called "Spaces."
-                  Additionally, none of these platforms had a solution for
-                  saving and reusing prompts, collaboration.
-                </p>
-                <p className="large">
+                <p>
                   Based on this analysis, I developed three potential approaches
                   for improving ChatGPT's organization:
                 </p>
               </section>
-              <div className="w-full h-[0.0625rem] bg-tertiary-color opacity-[0.6]"></div>
             </>
           )}
 
           {isAuthenticated && (
             <>
-              <section className="flex flex-col gap-2.5">
-                <h2>More coming soon........</h2>
+              <section className="flex flex-col gap-4">
+                <h3>More coming soon........</h3>
               </section>
             </>
           )}
@@ -502,11 +488,11 @@ function ChatGPTContent() {
           {!isAuthenticated && (
             <section className="flex flex-col gap-2 items-start w-full border-tertiary-color border-[0.063rem] rounded-lg p-6 bg-white shadow-inset-tertiary">
               <div>
-                <p className="large">
+                <p className="font-azeret-mono tracking-tight">
                   Above is a brief overview of my work. Please enter the
                   password to access the full case study.
                 </p>
-                <p className="text-secondary-color text-lg">
+                <p className="text-secondary-color font-azeret-mono tracking-tight text-sm">
                   If you don't have the password, feel free to shoot me an email{" "}
                   <a
                     href="mailto:rajatchandarana09@gmail.com"
@@ -524,14 +510,14 @@ function ChatGPTContent() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="border border-tertiary-color rounded p-1 w-full"
+                  className="border border-tertiary-color rounded px-2 py-1 w-full font-azeret-mono"
                   placeholder="Password"
                   autoComplete="off"
                 />
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full font-azeret-mono">
                   Submit
                 </Button>
-                {error && <span className="text-red-500">{error}</span>}
+                {error && <span className="text-red-500 font-azeret-mono">{error}</span>}
               </form>
             </section>
           )}

@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
           <li>
             <a
               href="https://www.linkedin.com/in/rajat-chandarana/"
-              className="commit-mono text-primary-color link-underline link-underline-hover"
+              className="font-azeret-mono text-primary-color link-underline link-underline-hover"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
           <li>
             <a
               href="https://twitter.com/rajatchandarana"
-              className="commit-mono text-primary-color link-underline link-underline-hover"
+              className="font-azeret-mono text-primary-color link-underline link-underline-hover"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
           <li>
             <a
               href="mailto:therobkan@gmail.com"
-              className="commit-mono text-primary-color link-underline link-underline-hover"
+              className="font-azeret-mono text-primary-color link-underline link-underline-hover"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -47,7 +47,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
     <section className="flex items-center gap-[0.25rem] w-full py-3">
       <Button
         onClick={handleBack}
-        className="commit-mono flex items-center gap-[0.25rem] pl-[0.5rem]"
+        className="font-azeret-mono flex items-center gap-[0.25rem] pl-[0.5rem]"
       >
         <ArrowLeft className="w-5 h-5" />
         BACK
@@ -58,7 +58,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
             variant={
               index === displayCrumbs.length - 1 ? "selected" : "default"
             }
-            className={`commit-mono ${
+            className={`font-azeret-mono ${
               index === displayCrumbs.length - 1 ? "shadow-inset-tertiary" : ""
             }`}
             onClick={() => crumb.href && router.push(crumb.href)}
