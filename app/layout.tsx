@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Rajat Chandarana",
     images: [
       {
-        url: "/favicon/logo.svg",
+        url: "https://rajatchandarana.com/favicon/logo.png",
         width: 1200,
         height: 1200,
         alt: "Rajat Chandarana Portfolio",
