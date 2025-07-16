@@ -33,25 +33,21 @@ export const metadata: Metadata = {
   title: "Rajat Chandarana",
   description: "Rajat Chandarana's portfolio showcasing product design work",
   icons: {
-    icon: [{ url: "/favicon/favicon.ico", sizes: "32x32" }],
-    other: [
-      { url: "/favicon/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/favicon/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
+    icon: [{ url: "/favicon/logo.svg", sizes: "32x32" }],
   },
   openGraph: {
     title: "Rajat Chandarana",
     description: "Rajat Chandarana's portfolio showcasing product design work",
     url: "https://rajatchandarana.com",
     siteName: "Rajat Chandarana",
-    // images: [
-    //   {
-    //     url: "/images/og.png",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Rajat Chandarana Portfolio",
-    //   },
-    // ],
+    images: [
+      {
+        url: "/favicon/logo.svg",
+        width: 1200,
+        height: 1200,
+        alt: "Rajat Chandarana Portfolio",
+      },
+    ],
   },
 };
 
