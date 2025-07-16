@@ -41,29 +41,55 @@ function AboutContent() {
           <article className="w-full">
             <section className="flex flex-col gap-2">
               <p className="font-azeret-mono tracking-tighter">
-                I am a final-year Computer Science student who loves
-                high-quality visual and interaction design.
+                As a final-year Computer Science student, I've come to
+                understand that the most profound digital experiences emerge at
+                the intersection of technical rigor and human-centered design
+                philosophy. My formative years were marked by a deep fascination
+                with artistic expressions. I distinguished myself in drawing and
+                painting throughout my academic tenure, earning recognition
+                through numerous competitive achievements.
               </p>
               <p className="font-azeret-mono tracking-tighter">
-                Growing up, I was naturally drawn to understanding how things
-                worked and looked. This curiosity about both form and function
-                laid the foundation for my love of design.
+                My first year of college was a whirlwind of exploration. I dove
+                headfirst into competitive coding, wrestling with data
+                structures and algorithms, building full-stack applications,
+                experimenting with AI and ML models, and configuring DevOps
+                pipelines. I was determined to find my niche in the vast
+                landscape of computer science.
               </p>
               <p className="font-azeret-mono tracking-tighter">
-                In university, I design as the perfect intersection of my
-                technical background and creative aspirations. My journey began
-                with exploring how beautiful interfaces could solve real
-                problems, developing empathy for users, and mastering design
-                processes that prioritize both form and function.
+                In my second year, I immersed myself in frontend development,
+                mastering frameworks and perfecting responsive layouts. But
+                while my peers were captivated by optimizing algorithms and
+                architecting elegant backend solutions, I found myself asking
+                fundamentally different questions:{" "}
+                <span className="italic">
+                  How will someone navigate this interface intuitively? What
+                  happens when a stressed user needs to complete this task in
+                  seconds? Why does clicking this button feel so unsatisfying?
+                </span>
               </p>
               <p className="font-azeret-mono tracking-tighter">
-                Outside of design, I enjoy cooking and playing badminton. These
-                pursuits keep me grounded and energized.
+                That's when UI/UX design didn't just click, it exploded into
+                clarity. I realized I'd been doing user experience thinking all
+                along; I just didn't know it had a name. I immersed myself in
+                design principles, studying the psychology behind user behavior
+                and learning about design laws. I began experimenting with
+                design software. Each new concept felt like finding missing
+                pieces of a puzzle I'd been unconsciously trying to solve.
               </p>
               <p className="font-azeret-mono tracking-tighter">
-                I'm excited to create digital experiences that are both
-                beautiful and meaningful, making technology more intuitive and
+                I'm driven by the belief that thoughtful design can make
+                technology more human. My goal is to create digital experiences
+                that don't just function well, but feel meaningful bridging the
+                gap between what's technically possible and what's genuinely
                 accessible for everyone.
+              </p>
+              <p className="font-azeret-mono tracking-tighter">
+                When not crafting digital experiences, I find myself drawn to a
+                diverse array of passions: experimenting with flavors in the
+                kitchen, competing in intense badminton games, and capturing
+                moments through both photography and videography.
               </p>
             </section>
           </article>
