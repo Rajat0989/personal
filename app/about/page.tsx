@@ -62,12 +62,10 @@ function AboutContent() {
                 mastering frameworks and perfecting responsive layouts. But
                 while my peers were captivated by optimizing algorithms and
                 architecting elegant backend solutions, I found myself asking
-                fundamentally different questions:{" "}
-                <span className="italic">
-                  How will someone navigate this interface intuitively? What
-                  happens when a stressed user needs to complete this task in
-                  seconds? Why does clicking this button feel so unsatisfying?
-                </span>
+                fundamentally different questions: How will someone navigate
+                this interface intuitively? What happens when a stressed user
+                needs to complete this task in seconds? Why does clicking this
+                button feel so unsatisfying?
               </p>
               <p className="font-azeret-mono tracking-tighter">
                 That's when UI/UX design didn't just click, it exploded into

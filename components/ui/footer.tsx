@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
           <li className="text-primary-color">/</li>
           <li>
             <a
-              href="mailto:therobkan@gmail.com"
+              href="mailto:rajatchandarana09@gmail.com"
               className="font-azeret-mono text-primary-color link-underline link-underline-hover"
               target="_blank"
               rel="noopener noreferrer"

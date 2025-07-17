@@ -105,7 +105,8 @@ function ChatGPTContent() {
                       muted
                       loop
                       autoPlay
-                      className="max-w-full h-full object-cover border border-tertiary-color rounded-md shadow-md"
+                      playsInline
+                      className="max-w-full object-cover border border-tertiary-color rounded-md shadow-md"
                       style={{ minWidth: "240px", minHeight: "180px" }}
                     ></video>
                   </div>
@@ -517,7 +518,9 @@ function ChatGPTContent() {
                 <Button type="submit" className="w-full font-azeret-mono">
                   Submit
                 </Button>
-                {error && <span className="text-red-500 font-azeret-mono">{error}</span>}
+                {error && (
+                  <span className="text-red-500 font-azeret-mono">{error}</span>
+                )}
               </form>
             </section>
           )}
