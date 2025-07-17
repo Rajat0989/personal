@@ -27,7 +27,7 @@ const HeaderMain: React.FC<HeaderMainProps> = ({
   };
 
   const handleResumeClick = () => {
-    window.open("/resume.pdf", "_blank");
+    window.open("/others/resume.pdf", "_blank");
   };
 
   return (
