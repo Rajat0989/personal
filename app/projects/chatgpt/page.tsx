@@ -95,6 +95,35 @@ function ChatGPTContent() {
                 </p>
                 <div className="w-full flex flex-col gap-4">
                   <div className="flex items-center w-full gap-4">
+                    <p className="">
+                      Important conversations, breakthrough ideas, and valuable
+                      prompts were getting buried in an endless list of chats.
+                      Finding something useful even from just a week ago became
+                      increasingly difficult and time consuming.
+                    </p>
+                    <p>
+                      ChatGPT's collaboration limitations were equally
+                      frustrating. We'd end up sharing individual chat links and
+                      screenshots through email or WhatsApp, but couldn't work
+                      together in real-time or build shared knowledge bases.
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </>
+          )}
+
+          {isAuthenticated && (
+            <>
+              <section className="flex flex-col gap-4">
+                <h3>Understanding the Problem</h3>
+                <p>
+                  After using ChatGPT almost daily for several months, I began
+                  to notice recurring frustrations that went beyond just my own
+                  workflow.
+                </p>
+                <div className="w-full flex flex-col gap-4">
+                  <div className="flex items-center w-full gap-4">
                     {/* <div className="w-1/2">
                       <video
                         src="/video/problem.mp4"
