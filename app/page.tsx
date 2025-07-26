@@ -45,8 +45,9 @@ function HomeContent() {
   };
 
   return (
-    <main className="page-container page-container-default">
-      <div className="flex flex-col gap-[2.5rem] items-center w-full">
+    <main className="page-container page-container-default font-azeret-mono">
+      New Portfolio coming soon....
+      {/* <div className="flex flex-col gap-[2.5rem] items-center w-full">
         <section className="flex flex-col gap-4 w-full">
           <HeaderMain
             selectedButton={selectedButton}
@@ -79,10 +80,6 @@ function HomeContent() {
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
                       </div>
-                      {/* <div className="flex justify-between text-xl px-3">
-                        <p className="azeret-mono">{project.title}</p>
-                        <p className="azeret-mono">{project.date}</p>
-                      </div> */}
                     </div>
                   </Link>
                 </div>
@@ -102,7 +99,7 @@ function HomeContent() {
         </div>
 
         <Footer />
-      </div>
+      </div> */}
     </main>
   );
 }
