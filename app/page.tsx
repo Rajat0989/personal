@@ -45,9 +45,8 @@ function HomeContent() {
   };
 
   return (
-    <main className="page-container page-container-default font-azeret-mono">
-      New Portfolio coming soon....
-      {/* <div className="flex flex-col gap-[2.5rem] items-center w-full">
+    <main className="page-container page-container-default">
+      <div className="flex flex-col gap-[2.5rem] items-center w-full">
         <section className="flex flex-col gap-4 w-full">
           <HeaderMain
             selectedButton={selectedButton}
@@ -99,7 +98,7 @@ function HomeContent() {
         </div>
 
         <Footer />
-      </div> */}
+      </div>
     </main>
   );
 }
