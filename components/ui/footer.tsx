@@ -15,18 +15,6 @@ const Footer: React.FC = () => {
               LINKEDIN
             </a>
           </li>
-
-          <li className="text-primary-color">/</li>
-          <li>
-            <a
-              href="https://twitter.com/rajatchandarana"
-              className="font-azeret-mono text-primary-color link-underline link-underline-hover"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              TWITTER
-            </a>
-          </li>
           <li className="text-primary-color">/</li>
           <li>
             <a

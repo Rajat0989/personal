@@ -41,53 +41,34 @@ function AboutContent() {
           <article className="w-full">
             <section className="flex flex-col gap-2">
               <p className="font-azeret-mono tracking-tighter">
-                As a final-year Computer Science student, I've come to
-                understand that the most profound digital experiences emerge at
-                the intersection of technical rigor and human-centered design
-                philosophy. My formative years were marked by a deep fascination
-                with artistic expressions. I distinguished myself in drawing and
-                painting throughout my academic tenure, earning recognition
-                through numerous competitive achievements.
+                I am a student at University of Mumbai studying Computer
+                Engineering. Growing up, I was deeply immersed in the arts,
+                whether it was sketching, painting, or exploring visual
+                storytelling. This early love for creativity shaped how I see
+                and solve problems today.
               </p>
               <p className="font-azeret-mono tracking-tighter">
-                My first year of college was a whirlwind of exploration. I dove
-                headfirst into competitive coding, wrestling with data
-                structures and algorithms, building full-stack applications,
-                experimenting with AI and ML models, and configuring DevOps
-                pipelines. I was determined to find my niche in the vast
-                landscape of computer science.
+                In college, I explored everything from Competitive coding,
+                Full-stack development, Machine Learning, DevOps, etc. But while
+                my peers focused on optimising algorithms, I obsessed over how
+                it feels when someone flows through an interface, how a click
+                responds, etc.
               </p>
               <p className="font-azeret-mono tracking-tighter">
-                In my second year, I immersed myself in frontend development,
-                mastering frameworks and perfecting responsive layouts. But
-                while my peers were captivated by optimizing algorithms and
-                architecting elegant backend solutions, I found myself asking
-                fundamentally different questions: How will someone navigate
-                this interface intuitively? What happens when a stressed user
-                needs to complete this task in seconds? Why does clicking this
-                button feel so unsatisfying?
+                That curiosity led me to discover UX design, where my technical
+                background and creative instincts finally made sense together. I
+                immersed myself in user psychology, design principles, and
+                interaction patterns, discovering a space where logic and
+                creativity coexist.
               </p>
               <p className="font-azeret-mono tracking-tighter">
-                That's when UI/UX design didn't just click, it exploded into
-                clarity. I realized I'd been doing user experience thinking all
-                along; I just didn't know it had a name. I immersed myself in
-                design principles, studying the psychology behind user behavior
-                and learning about design laws. I began experimenting with
-                design software. Each new concept felt like finding missing
-                pieces of a puzzle I'd been unconsciously trying to solve.
+                Today, I focus on creating experiences that feel intuitive and
+                human. For me, good design isn't about adding more; it's about
+                removing friction and making complex things simple.
               </p>
               <p className="font-azeret-mono tracking-tighter">
-                I'm driven by the belief that thoughtful design can make
-                technology more human. My goal is to create digital experiences
-                that don't just function well, but feel meaningful bridging the
-                gap between what's technically possible and what's genuinely
-                accessible for everyone.
-              </p>
-              <p className="font-azeret-mono tracking-tighter">
-                When not crafting digital experiences, I find myself drawn to a
-                diverse array of passions: experimenting with flavors in the
-                kitchen, competing in intense badminton games, and capturing
-                moments through both photography and videography.
+                When I'm not designing, you'll find me experimenting in the
+                kitchen, playing badminton, sketching, and taking photographs.
               </p>
             </section>
           </article>

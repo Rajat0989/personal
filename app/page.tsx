@@ -54,8 +54,8 @@ function HomeContent() {
           />
           <div className="flex flex-col w-full">
             <p className="font-azeret-mono tracking-tighter">
-              Rajat is a designer who loves high quality visuals and
-              interactions. He enjoys solving complex problems in creative ways
+              I am a designer who loves high quality visuals and
+              interactions. I enjoy solving complex problems in creative ways
               while keeping users at the centre of every design decision.
             </p>
           </div>
