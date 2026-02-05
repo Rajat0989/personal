@@ -1,108 +1,89 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
-import { useRouter } from "next/navigation";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 // Local utilities and hooks
-import { getFeaturedProjects } from "@/lib/data/projectData";
+import { allProjects } from "@/lib/data/projectData";
 
 // Local components
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/ui/footer";
 import HeaderMain from "@/components/ui/header";
 
-function HomeContent() {
-  const projectData = getFeaturedProjects();
-  const years = Object.keys(projectData).sort((a, b) => Number(b) - Number(a));
-
-  // Get featured projects in a flat array
-  const featuredProjects = years.flatMap((year) =>
-    projectData[year].map((project) => ({
-      ...project,
-      year,
-    }))
-  );
-
-  const [selectedButton, setSelectedButton] = useState<string>("home");
-  const router = useRouter();
-
-  useEffect(() => {
-    setSelectedButton("home");
-  }, []);
-
-  const handleButtonClick = (buttonName: string) => {
-    setSelectedButton(buttonName);
-    switch (buttonName) {
-      case "projects":
-        router.push("/archive");
-        break;
-      case "about":
-        router.push("/about");
-        break;
-    }
-  };
+export default function Home() {
+  const featuredProjects = allProjects
+    .filter((project) => project.featured)
+    .map((project) => ({ ...project, year: project.date }));
 
   return (
     <main className="page-container page-container-default">
-      <div className="flex flex-col gap-[2.5rem] items-center w-full">
+      Portfolio coming soon.....
+      {/* <div className="flex flex-col gap-[2.5rem] items-center w-full">
         <section className="flex flex-col gap-4 w-full">
-          <HeaderMain
-            selectedButton={selectedButton}
-            handleButtonClick={handleButtonClick}
-          />
-          <div className="flex flex-col w-full">
-            <p className="font-azeret-mono tracking-tighter">
-              I am a designer who loves high quality visuals and
-              interactions. I enjoy solving complex problems in creative ways
-              while keeping users at the centre of every design decision.
-            </p>
-          </div>
+          <HeaderMain />
+        </section>
+
+        <section className="h-[25rem] md:h-[40rem] flex justify-center items-center">
+          <h1 className="font-tiempos-headline font-extralight text-center sm:text-[3rem] md:text-[4rem]">
+            I'm Rajat, an <span className="italic">Engineer </span>
+            <br /> turned <span className="italic">Product Designer</span>
+          </h1>
         </section>
 
         <div className="w-full flex gap-5 flex-col">
-          <h2>Selected Work</h2>
-          <section className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-              {featuredProjects.map((project, index) => (
-                <div key={`${project.year}-${project.num}`} className="w-full">
-                  <Link href={project.href} className="w-full">
-                    <div className="flex flex-col gap-2">
-                      <div className="w-full">
-                        <Image
-                          src={project.svgSrc}
-                          alt={project.title}
-                          width={1200}
-                          height={800}
-                          className="w-full border border-tertiary-color rounded-md shadow-md"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        />
-                      </div>
-                    </div>
-                  </Link>
+          <h2 className="text-secondary-color font-tiempos-text font-light text-[3rem]">
+            Selected Work
+          </h2>
+          <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+            {featuredProjects.map((project) => (
+              <Link
+                key={`${project.year}-${project.num}`}
+                href={project.href}
+                className="flex flex-col gap-2 w-full group"
+              >
+                <div className="w-full relative aspect-[3/2] overflow-hidden rounded-md border border-tertiary-color shadow-md">
+                  <Image
+                    src={project.svgSrc}
+                    alt={project.projectName}
+                    fill
+                    className="object-cover transition-opacity group-hover:opacity-90"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
-              ))}
-            </div>
+                <div className="flex flex-col gap-0.5">
+                  {project.title ? (
+                    <p className="text-secondary-color text-large font-medium">
+                      {project.title}
+                    </p>
+                  ) : null}
+                  <span className="font-tiempos-text font-light text-tertiary-color uppercase tracking-tight">
+                    {project.year}
+                    {project.type && (
+                      <>
+                        {" · "}
+                        {project.type}
+                      </>
+                    )}
+                  </span>
+                </div>
+              </Link>
+            ))}
           </section>
           <div className="w-full flex justify-center items-center">
-            <Link href="/archive" className="w-fit">
-              <Button
-                variant="default"
-                className="border border-tertiary-color font-azeret-mono rounded-[0.375rem] text-primary-color"
-              >
-                <span>VIEW ALL</span>
-              </Button>
-            </Link>
+            <Button
+              asChild
+              variant="default"
+              className="border border-tertiary-color font-azeret-mono rounded-[0.375rem] text-primary-color"
+            >
+              <Link href="/archive">VIEW ALL</Link>
+            </Button>
           </div>
         </div>
 
         <Footer />
-      </div>
+      </div> */}
     </main>
   );
-}
-
-export default function Home() {
-  return <Suspense fallback={null}>{<HomeContent />}</Suspense>;
 }

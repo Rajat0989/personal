@@ -46,7 +46,7 @@ const TabsList = React.forwardRef<
     ref={ref}
     className={cn(
       "inline-flex items-center justify-center rounded-[0.375rem] bg-fill p-[0.3rem] shadow-inset-tertiary",
-      className
+      className,
     )}
     {...props}
   />
@@ -79,7 +79,7 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
           "text-[1rem]",
           "hover:text-primary-color focus-visible:outline-none",
           "data-[state=active]:text-primary-color",
-          className
+          className,
         )}
         {...props}
       >
@@ -93,7 +93,7 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
         <span className="relative z-10">{children}</span>
       </button>
     );
-  }
+  },
 );
 TabsTrigger.displayName = "TabsTrigger";
 

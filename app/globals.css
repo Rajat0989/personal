@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body {
+    min-height: 100vh;
+    color: var(--color-primary);
+    background-color: var(--color-background);
+  }
+
   :root {
     /* Colors */
     --color-background: #fafafa;
@@ -10,12 +17,13 @@
     --color-fill: #f3f3f3;
     --color-primary: #0f0f0f;
     --color-primary-light: #1f1f1f;
-    --color-secondary: #333333;
-    --color-tertiary: #d5d5d5;
+    --color-secondary: #454545;
+    --color-tertiary: #888888;
 
     /* Typography */
     --font-azeret-mono: "Azeret Mono", monospace;
-    --font-prata: "Prata", serif;
+    --font-tiempos-text: "Tiempos Text", serif;
+    --font-tiempos-headline: "Tiempos Headline", serif;
     --font-schibsted-grotesk: "Schibsted Grotesk", sans-serif;
 
     /* Font sizes */
@@ -40,7 +48,7 @@
     @apply text-subheading font-schibsted font-medium text-secondary-color tracking-tight;
   }
   h3 {
-    @apply text-extra font-schibsted font-medium text-secondary-color tracking-tight;
+    @apply text-extralarge font-schibsted font-medium text-secondary-color tracking-tight;
   }
   p {
     @apply text-default font-schibsted text-secondary-color;
@@ -61,11 +69,17 @@
     margin: 0 auto;
     padding: 8vh 3rem;
   }
+  @media (max-width: 640px) {
+    .page-container {
+      padding: 6vh 2rem;
+    }
+  }
   @media (max-width: 440px) {
     .page-container {
       padding: 4vh 1rem;
     }
   }
+
   .page-container-default {
     max-width: calc(var(--max-width-default) + 6rem);
   }
@@ -86,5 +100,8 @@
   }
   .shadow-inset-tertiary {
     box-shadow: inset 0 0 0 0.05rem var(--color-tertiary);
+  }
+  .shadow-inset-primary {
+    box-shadow: inset 0 0 0 0.05rem var(--color-primary);
   }
 }

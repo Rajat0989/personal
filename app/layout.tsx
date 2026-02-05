@@ -1,6 +1,7 @@
 // Next.js
 import type { Metadata } from "next";
-import { Schibsted_Grotesk, Prata, Azeret_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Schibsted_Grotesk, Azeret_Mono } from "next/font/google";
 
 // Third-party packages
 import { Analytics } from "@vercel/analytics/react";
@@ -16,10 +17,62 @@ const azeretMono = Azeret_Mono({
   display: "swap",
 });
 
-const prata = Prata({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-prata",
+const tiemposText = localFont({
+  src: [
+    {
+      path: "../public/font/Tiempos/TiemposText/TiemposText-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/font/Tiempos/TiemposText/TiemposText-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/font/Tiempos/TiemposText/TiemposText-Semibold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/font/Tiempos/TiemposText/TiemposText-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-tiempos-text",
+  display: "swap",
+});
+
+const tiemposHeadline = localFont({
+  src: [
+    {
+      path: "../public/font/Tiempos/TiemposHeadline/TiemposHeadline-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/font/Tiempos/TiemposHeadline/TiemposHeadline-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/font/Tiempos/TiemposHeadline/TiemposHeadline-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/font/Tiempos/TiemposHeadline/TiemposHeadline-Semibold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/font/Tiempos/TiemposHeadline/TiemposHeadline-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-tiempos-headline",
   display: "swap",
 });
 
@@ -59,7 +112,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${azeretMono.variable} ${prata.variable} ${schibstedGrotesk.variable} antialiased bg-background min-h-screen`}
+        className={`${azeretMono.variable} ${tiemposText.variable} ${tiemposHeadline.variable} ${schibstedGrotesk.variable} antialiased bg-background min-h-screen`}
       >
         {children}
         <SpeedInsights />

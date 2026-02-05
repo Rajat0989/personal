@@ -1,7 +1,6 @@
 "use client";
 
-import React, { Suspense, useState } from "react";
-import { useRouter } from "next/navigation";
+import React from "react";
 
 // Local components
 import Breadcrumbs from "@/components/ui/breadcrumbs";
@@ -9,30 +8,13 @@ import Footer from "@/components/ui/footer";
 import HeaderMain from "@/components/ui/header";
 
 function AboutContent() {
-  const router = useRouter();
   const crumbs = [{ label: "ABOUT ME" }];
-  const [selectedButton, setSelectedButton] = useState<string>("about");
-
-  const handleButtonClick = (buttonName: string) => {
-    setSelectedButton(buttonName);
-    switch (buttonName) {
-      case "home":
-        router.push("/");
-        break;
-      case "projects":
-        router.push("/archive");
-        break;
-    }
-  };
 
   return (
     <main className="page-container page-container-default">
       <div className="flex flex-col gap-2 items-center w-full">
         <section className="flex flex-col gap-2 w-full">
-          <HeaderMain
-            selectedButton={selectedButton}
-            handleButtonClick={handleButtonClick}
-          />
+          <HeaderMain />
         </section>
 
         <div className="flex flex-col gap-[2.5rem] items-start w-full mx-auto">
@@ -81,9 +63,5 @@ function AboutContent() {
 }
 
 export default function About() {
-  return (
-    <Suspense fallback={null}>
-      <AboutContent />
-    </Suspense>
-  );
+  return <AboutContent />;
 }

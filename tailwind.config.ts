@@ -13,7 +13,7 @@ const config: Config = {
         small: ["var(--font-size-small)", "var(--line-height-body)"],
         default: ["var(--font-size-body)", "var(--line-height-body)"],
         large: ["var(--font-size-large)", "var(--line-height-body)"],
-        extra: ["var(--font-size-extralarge)", "var(--line-height-subheading)"],
+        extralarge: ["var(--font-size-extralarge)", "var(--line-height-subheading)"],
         heading: ["var(--font-size-heading)", "var(--line-height-headings)"],
         subheading: [
           "var(--font-size-subheading)",
@@ -32,7 +32,8 @@ const config: Config = {
 
       fontFamily: {
         "azeret-mono": ["var(--font-azeret-mono)", "monospace"],
-        prata: ["var(--font-prata)", "serif"],
+        "tiempos-text": ["var(--font-tiempos-text)", "serif"],
+        "tiempos-headline": ["var(--font-tiempos-headline)", "serif"],
         schibsted: ["var(--font-schibsted-grotesk)", "sans"],
       },
       letterSpacing: {
@@ -44,6 +45,11 @@ const config: Config = {
       },
       boxShadow: {
         line: "inset 0 0.05rem 0 0 var(--color-tertiary)",
+        "inset-tertiary": "inset 0 0 0 0.05rem var(--color-tertiary)",
+        "inset-primary": "inset 0 0 0 0.05rem var(--color-primary)",
+      },
+      ringColor: {
+        DEFAULT: "var(--color-tertiary)",
       },
     },
   },

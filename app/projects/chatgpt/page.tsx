@@ -1,47 +1,20 @@
 "use client";
 
-import React, { Suspense, useState, useEffect } from "react";
+import React from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 // Local components
 import Breadcrumbs from "@/components/ui/breadcrumbs";
 import Footer from "@/components/ui/footer";
-import { Button } from "@/components/ui/button";
 
 function ChatGPTContent() {
   const searchParams = useSearchParams();
   const fromAllWorks = searchParams.get("from") === "all-works";
 
-  const [password, setPassword] = useState("");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("chatgpt_case_study_access");
-      if (stored === "true") {
-        setIsAuthenticated(true);
-      }
-    }
-  }, []);
-
   const crumbs = fromAllWorks
     ? [{ label: "ALL WORKS", href: "/archive" }, { label: "CHATGPT" }]
     : [{ label: "CHATGPT" }];
-
-  function handlePasswordSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (password.trim() === "RAM") {
-      setIsAuthenticated(true);
-      setError("");
-      if (typeof window !== "undefined") {
-        localStorage.setItem("chatgpt_case_study_access", "true");
-      }
-    } else {
-      setError("Incorrect password. Please try again.");
-    }
-  }
 
   return (
     <main
@@ -59,7 +32,10 @@ function ChatGPTContent() {
       // onContextMenu={(e) => e.preventDefault()}
     >
       <div className="flex flex-col gap-4 items-start w-full mx-auto">
-        <Breadcrumbs crumbs={crumbs} />
+        <Breadcrumbs
+          crumbs={crumbs}
+          backTo={fromAllWorks ? "/archive" : "/"}
+        />
         <article className="w-full flex flex-col gap-[4rem]">
           <section className="flex flex-col gap-3.5">
             <h2>
@@ -84,9 +60,7 @@ function ChatGPTContent() {
             </div>
           </section>
 
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>Understanding the Problem</h3>
                 <p>
                   After using ChatGPT almost daily for several months, I began
@@ -110,12 +84,7 @@ function ChatGPTContent() {
                   </div>
                 </div>
               </section>
-            </>
-          )}
-
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>User Survey</h3>
                 <p>
                   To quantify the problem and validate my observations, I
@@ -162,12 +131,7 @@ function ChatGPTContent() {
                   impactful, and interconnected.
                 </p>
               </section>
-            </>
-          )}
-
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>User Interview</h3>
                 <div className="w-full flex flex-col sm:flex-row gap-4">
                   <p className="sm:w-1/3">
@@ -199,12 +163,7 @@ function ChatGPTContent() {
                   />
                 </div>
               </section>
-            </>
-          )}
-
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>Persona</h3>
                 <p>
                   Based on my research findings, I created a primary persona
@@ -222,12 +181,7 @@ function ChatGPTContent() {
                   />
                 </div>
               </section>
-            </>
-          )}
-
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>User Journey Map</h3>
                 <p>
                   Mapped the user's complete interaction cycle with ChatGPT to
@@ -249,12 +203,7 @@ function ChatGPTContent() {
                   />
                 </div>
               </section>
-            </>
-          )}
-
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>Pain Points, Problem & Goal</h3>
                 <div className="w-full">
                   <Image
@@ -268,12 +217,7 @@ function ChatGPTContent() {
                   />
                 </div>
               </section>
-            </>
-          )}
-
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>Solution Exploration</h3>
                 <p>
                   To explore potential solutions, I developed "How Might We"
@@ -439,12 +383,7 @@ function ChatGPTContent() {
                   />
                 </div>
               </section>
-            </>
-          )}
-
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>User Flow</h3>
                 <p>
                   I crafted a user flow illustrating the various paths users
@@ -465,12 +404,7 @@ function ChatGPTContent() {
                   />
                 </div>
               </section>
-            </>
-          )}
-
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>Wireframes</h3>
                 <p>
                   Here are some of the wireframes that provided us with the
@@ -490,9 +424,6 @@ function ChatGPTContent() {
                   />
                 </div>
               </section>
-            </>
-          )}
-
           {/* {isAuthenticated && (
             <>
               <section className="flex flex-col gap-4">
@@ -535,12 +466,7 @@ function ChatGPTContent() {
                   </li>
                 </ul>
               </section>
-            </>
-          )}
-
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>Learnings and Reflections</h3>
                 <ul>
                   <li>
@@ -573,53 +499,9 @@ function ChatGPTContent() {
             </>
           )} */}
 
-          {isAuthenticated && (
-            <>
-              <section className="flex flex-col gap-4">
+             <section className="flex flex-col gap-4">
                 <h3>More coming soon .......</h3>
               </section>
-            </>
-          )}
-
-          {!isAuthenticated && (
-            <section className="flex flex-col gap-2 items-start w-full border-tertiary-color border-[0.063rem] rounded-lg p-6 bg-white shadow-inset-tertiary">
-              <div>
-                <p className="font-azeret-mono tracking-tight">
-                  Above is a brief overview of my work. Please enter the
-                  password to access the full case study.
-                </p>
-                <p className="text-secondary-color font-azeret-mono tracking-tight text-sm">
-                  If you don't have the password, feel free to shoot me an email{" "}
-                  <a
-                    href="mailto:rajatchandarana09@gmail.com"
-                    className="link-underline"
-                  >
-                    here
-                  </a>
-                </p>
-              </div>
-              <form
-                onSubmit={handlePasswordSubmit}
-                className="flex flex-col gap-1 w-full"
-              >
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="border border-tertiary-color rounded px-2 py-1 w-full font-azeret-mono"
-                  placeholder="Password"
-                  autoComplete="off"
-                />
-                <Button type="submit" className="w-full font-azeret-mono">
-                  Submit
-                </Button>
-                {error && (
-                  <span className="text-red-500 font-azeret-mono">{error}</span>
-                )}
-              </form>
-            </section>
-          )}
-
           <section>
             <Footer />
           </section>
@@ -630,9 +512,5 @@ function ChatGPTContent() {
 }
 
 export default function ChatGPT() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ChatGPTContent />
-    </Suspense>
-  );
+  return <ChatGPTContent />;
 }
