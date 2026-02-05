@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
@@ -247,5 +247,9 @@ function JiogamesContent() {
 }
 
 export default function JioGames() {
-  return <JiogamesContent />;
+  return (
+    <Suspense fallback={null}>
+      <JiogamesContent />
+    </Suspense>
+  );
 }

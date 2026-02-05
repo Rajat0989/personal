@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
@@ -95,5 +95,9 @@ function LinkedinContent() {
 }
 
 export default function Linkedin() {
-  return <LinkedinContent />;
+  return (
+    <Suspense fallback={null}>
+      <LinkedinContent />
+    </Suspense>
+  );
 }

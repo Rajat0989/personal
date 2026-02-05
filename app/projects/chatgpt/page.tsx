@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
@@ -512,5 +512,9 @@ function ChatGPTContent() {
 }
 
 export default function ChatGPT() {
-  return <ChatGPTContent />;
+  return (
+    <Suspense fallback={null}>
+      <ChatGPTContent />
+    </Suspense>
+  );
 }
