@@ -10,30 +10,26 @@ const config: Config = {
   theme: {
     extend: {
       fontSize: {
-        small: ["var(--font-size-small)", "var(--line-height-body)"],
-        default: ["var(--font-size-body)", "var(--line-height-body)"],
-        large: ["var(--font-size-large)", "var(--line-height-body)"],
-        extralarge: ["var(--font-size-extralarge)", "var(--line-height-subheading)"],
-        heading: ["var(--font-size-heading)", "var(--line-height-headings)"],
-        subheading: [
-          "var(--font-size-subheading)",
-          "var(--line-height-headings)",
-        ],
+        sm: ["var(--font-size-sm)", "var(--line-height-sm)"],
+        base: ["var(--font-size-base)", "var(--line-height-sm)"],
+        md: ["var(--font-size-md)", "var(--line-height-sm)"],
+        lg: ["var(--font-size-lg)", "var(--line-height-sm)"],
+        xl: ["var(--font-size-xl)", "var(--line-height-sm)"],
+        "2xl": ["var(--font-size-2xl)", "var(--line-height-sm)"],
       },
       colors: {
-        background: "var(--color-background)",
-        select: "var(--color-select)",
-        fill: "var(--color-fill)",
         "primary-color": "var(--color-primary)",
-        "primary-color-light": "var(--color-primary-light)",
         "secondary-color": "var(--color-secondary)",
         "tertiary-color": "var(--color-tertiary)",
+        "primary-color-dark": "var(--color-primary-dark)",
+        "secondary-color-dark": "var(--color-secondary-dark)",
+        "tertiary-color-dark": "var(--color-tertiary-dark)",
+        select: "var(--color-select)",
       },
 
       fontFamily: {
         "azeret-mono": ["var(--font-azeret-mono)", "monospace"],
         "tiempos-text": ["var(--font-tiempos-text)", "serif"],
-        "tiempos-headline": ["var(--font-tiempos-headline)", "serif"],
         schibsted: ["var(--font-schibsted-grotesk)", "sans"],
       },
       letterSpacing: {

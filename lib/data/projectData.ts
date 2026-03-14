@@ -33,7 +33,7 @@ export const allProjects: Project[] = [
   {
     num: "03",
     projectName: "ChatGPT",
-    title: "Turning Prompts into a Reusable Asset",
+    title: "Designing a Prompt Library for ChatGPT",
     type: "Concept",
     date: "2024",
     href: "/projects/chatgpt",
@@ -46,11 +46,14 @@ export const getFeaturedProjects = (): Record<string, Project[]> => {
   // Filter projects based on the featured property
   const featuredProjects = allProjects.filter((project) => project.featured);
 
-  return featuredProjects.reduce((acc, project) => {
-    if (!acc[project.date]) {
-      acc[project.date] = [];
-    }
-    acc[project.date].push(project);
-    return acc;
-  }, {} as Record<string, Project[]>);
+  return featuredProjects.reduce(
+    (acc, project) => {
+      if (!acc[project.date]) {
+        acc[project.date] = [];
+      }
+      acc[project.date].push(project);
+      return acc;
+    },
+    {} as Record<string, Project[]>,
+  );
 };

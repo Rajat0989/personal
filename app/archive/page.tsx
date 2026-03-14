@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Local components
-import Breadcrumbs from "@/components/ui/breadcrumbs";
 import Footer from "@/components/ui/footer";
 import HeaderMain from "@/components/ui/header";
 import { allProjects } from "@/lib/data/projectData";
@@ -20,7 +19,6 @@ export default function Archive() {
       <div className="flex flex-col gap-[2.5rem] items-center w-full">
         <section className="flex flex-col gap-2 w-full">
           <HeaderMain />
-          <Breadcrumbs crumbs={[{ label: "ALL WORKS" }]} />
         </section>
 
         <article className="w-full">
@@ -42,11 +40,11 @@ export default function Archive() {
                 </div>
                 <div className="flex flex-col gap-0.5">
                   {project.title ? (
-                    <p className="text-secondary-color text-large font-medium">
+                    <p className="text-secondary-color text-lg font-medium">
                       {project.title}
                     </p>
                   ) : null}
-                  <span className="font-tiempos-text font-light text-tertiary-color text-large">
+                  <span className="font-tiempos-text font-light text-tertiary-color text-lg">
                     {project.year}
                     {project.type && (
                       <>

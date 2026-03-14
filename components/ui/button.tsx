@@ -13,18 +13,20 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-secondary-color hover:text-primary-color bg-fill",
-        selected: "text-primary-color bg-select shadow-inset-primary",
+        default:
+          "text-primary-color-dark hover:text-secondary-color-dark bg-primary-color",
+        selected: "text-primary-color-dark bg-secondary-color",
       },
     },
     defaultVariants: {
       variant: "default",
     },
-  }
+  },
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   isSelected?: boolean;
@@ -42,7 +44,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       onClick,
       ...props
     },
-    ref
+    ref,
   ) => {
     const Comp = asChild ? Slot : "button";
     return (
@@ -52,14 +54,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           buttonVariants({
             variant: isSelected ? "selected" : variant,
             className,
-          })
+          }),
         )}
         ref={ref}
         onClick={onClick}
         {...props}
       />
     );
-  }
+  },
 );
 
 Button.displayName = "Button";

@@ -24,7 +24,6 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   const router = useRouter();
 
   const handleBack = () => {
-    // Prefer real browser back when history exists, otherwise fall back.
     if (typeof window !== "undefined" && window.history.length > 1) {
       router.back();
       return;
@@ -40,7 +39,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
         onClick={handleBack}
         className="font-azeret-mono flex items-center gap-[0.25rem] pl-[0.5rem]"
       >
-        <ArrowLeft className="w-5 h-5" />
+        <ArrowLeft className="w-5 h-5"/>
         BACK
       </Button>
       {crumbs.map((crumb, index) => (
@@ -50,7 +49,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
           variant={
             index === crumbs.length - 1 ? "selected" : "default"
           }
-          className={`font-azeret-mono ${
+          className={`font-azeret-mono cursor-default ${
             index === crumbs.length - 1 ? "shadow-inset-tertiary" : ""
           }`}
           onClick={() => crumb.href && router.push(crumb.href)}

@@ -19,21 +19,20 @@ export default function Home() {
 
   return (
     <main className="page-container page-container-default">
-      Portfolio coming soon.....
-      {/* <div className="flex flex-col gap-[2.5rem] items-center w-full">
+      <div className="flex flex-col gap-[2.5rem] items-center w-full">
         <section className="flex flex-col gap-4 w-full">
           <HeaderMain />
         </section>
 
         <section className="h-[25rem] md:h-[40rem] flex justify-center items-center">
-          <h1 className="font-tiempos-headline font-extralight text-center sm:text-[3rem] md:text-[4rem]">
+          <h1 className="font-tiempos-text font-extralight text-center sm:text-[3rem] md:text-[4rem]">
             I'm Rajat, an <span className="italic">Engineer </span>
             <br /> turned <span className="italic">Product Designer</span>
           </h1>
         </section>
 
         <div className="w-full flex gap-5 flex-col">
-          <h2 className="text-secondary-color font-tiempos-text font-light text-[3rem]">
+          <h2 className="text-secondary-color-dark font-tiempos-text font-light text-[3rem]">
             Selected Work
           </h2>
           <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
@@ -54,7 +53,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-0.5">
                   {project.title ? (
-                    <p className="text-secondary-color text-large font-medium">
+                    <p className="text-secondary-color text-lg font-medium">
                       {project.title}
                     </p>
                   ) : null}
@@ -83,7 +82,7 @@ export default function Home() {
         </div>
 
         <Footer />
-      </div> */}
+      </div>
     </main>
   );
 }

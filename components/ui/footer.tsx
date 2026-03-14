@@ -8,18 +8,18 @@ const Footer: React.FC = () => {
           <li>
             <a
               href="https://www.linkedin.com/in/rajat-chandarana/"
-              className="font-azeret-mono text-primary-color link-underline link-underline-hover"
+              className="font-azeret-mono text-primary-color-dark"
               target="_blank"
               rel="noopener noreferrer"
             >
               LINKEDIN
             </a>
           </li>
-          <li className="text-primary-color">/</li>
+          <li className="text-primary-color-dark">/</li>
           <li>
             <a
               href="mailto:rajatchandarana09@gmail.com"
-              className="font-azeret-mono text-primary-color link-underline link-underline-hover"
+              className="font-azeret-mono text-primary-color-dark"
               target="_blank"
               rel="noopener noreferrer"
             >

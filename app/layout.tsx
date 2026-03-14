@@ -44,38 +44,6 @@ const tiemposText = localFont({
   display: "swap",
 });
 
-const tiemposHeadline = localFont({
-  src: [
-    {
-      path: "../public/font/Tiempos/TiemposHeadline/TiemposHeadline-Light.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../public/font/Tiempos/TiemposHeadline/TiemposHeadline-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/font/Tiempos/TiemposHeadline/TiemposHeadline-Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/font/Tiempos/TiemposHeadline/TiemposHeadline-Semibold.otf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/font/Tiempos/TiemposHeadline/TiemposHeadline-Bold.otf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-tiempos-headline",
-  display: "swap",
-});
-
 const schibstedGrotesk = Schibsted_Grotesk({
   subsets: ["latin"],
   variable: "--font-schibsted-grotesk",
@@ -112,7 +80,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${azeretMono.variable} ${tiemposText.variable} ${tiemposHeadline.variable} ${schibstedGrotesk.variable} antialiased bg-background min-h-screen`}
+        className={`${azeretMono.variable} ${tiemposText.variable} ${schibstedGrotesk.variable} antialiased bg-background min-h-screen`}
       >
         {children}
         <SpeedInsights />

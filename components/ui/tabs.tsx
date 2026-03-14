@@ -45,7 +45,7 @@ const TabsList = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center rounded-[0.375rem] bg-fill p-[0.3rem] shadow-inset-tertiary",
+      "inline-flex items-center justify-center rounded-[0.375rem] bg-primary-color p-[0.3rem]",
       className,
     )}
     {...props}
@@ -53,8 +53,7 @@ const TabsList = React.forwardRef<
 ));
 TabsList.displayName = "TabsList";
 
-interface TabsTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface TabsTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   value: string;
 }
 
@@ -86,7 +85,7 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
         {selectedTab === value && (
           <motion.span
             layoutId="bubble"
-            className="absolute inset-[0.0625rem] z-0 bg-white rounded-[0.25rem]"
+            className="absolute inset-[0.0625rem] z-0 bg-primary-color rounded-[0.25rem]"
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           />
         )}

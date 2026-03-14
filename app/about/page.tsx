@@ -3,13 +3,10 @@
 import React from "react";
 
 // Local components
-import Breadcrumbs from "@/components/ui/breadcrumbs";
 import Footer from "@/components/ui/footer";
 import HeaderMain from "@/components/ui/header";
 
 function AboutContent() {
-  const crumbs = [{ label: "ABOUT ME" }];
-
   return (
     <main className="page-container page-container-default">
       <div className="flex flex-col gap-2 items-center w-full">
@@ -18,8 +15,6 @@ function AboutContent() {
         </section>
 
         <div className="flex flex-col gap-[2.5rem] items-start w-full mx-auto">
-          <Breadcrumbs crumbs={crumbs} />
-
           <article className="w-full">
             <section className="flex flex-col gap-2">
               <p className="font-azeret-mono tracking-tighter">
