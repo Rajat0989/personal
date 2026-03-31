@@ -26,19 +26,19 @@
     --font-schibsted-grotesk: "Schibsted Grotesk", sans-serif;
 
     /* Font sizes */
-    --font-size-sm: 0.84rem;
+    --font-size-sm: 1rem;
     --font-size-base: 1.14rem;
     --font-size-md: 1.28rem;
     --font-size-lg: 1.68rem;
-    --font-size-xl: 2rem;
-    --font-size-2xl: 2.52rem;
+    --font-size-xl: 2.14rem;
+    --font-size-2xl: 2.84rem;
 
     --line-height-lg: 1.5;
     --line-height-sm: 1.35;
 
     /* Layout */
     --max-width-page: 88rem;
-    --max-width-content: 40rem;
+    --max-width-content: 48rem;
   }
 
   h1 {
@@ -47,11 +47,8 @@
   h2 {
     @apply text-xl font-tiempos-text font-light text-secondary-color-dark tracking-tight;
   }
-  h3 {
-    @apply text-lg font-schibsted font-medium text-secondary-color-dark tracking-tight;
-  }
   p {
-    @apply text-base font-schibsted text-secondary-color-dark;
+    @apply text-sm font-schibsted text-tertiary-color-dark;
   }
   ::selection {
     background-color: var(--color-select);

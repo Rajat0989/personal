@@ -33,7 +33,7 @@ export const allProjects: Project[] = [
   {
     num: "03",
     projectName: "ChatGPT",
-    title: "Designing a Prompt Library for ChatGPT",
+    title: "Prompt Library for ChatGPT",
     type: "Concept",
     date: "2024",
     href: "/projects/chatgpt",

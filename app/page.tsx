@@ -18,8 +18,9 @@ export default function Home() {
     .map((project) => ({ ...project, year: project.date }));
 
   return (
-    <main className="page-container page-container-default">
-      <div className="flex flex-col gap-[2.5rem] items-center w-full">
+    <main className="page-container">
+      Portfolio coming soon....
+      {/* <div className="flex flex-col gap-[2.5rem] items-center w-full">
         <section className="flex flex-col gap-4 w-full">
           <HeaderMain />
         </section>
@@ -57,7 +58,7 @@ export default function Home() {
                       {project.title}
                     </p>
                   ) : null}
-                  <span className="font-tiempos-text font-light text-tertiary-color uppercase tracking-tight">
+                  <p className="font-tiempos-text font-light text-tertiary-color uppercase tracking-tight">
                     {project.year}
                     {project.type && (
                       <>
@@ -65,7 +66,7 @@ export default function Home() {
                         {project.type}
                       </>
                     )}
-                  </span>
+                  </p>
                 </div>
               </Link>
             ))}
@@ -74,7 +75,7 @@ export default function Home() {
             <Button
               asChild
               variant="default"
-              className="border border-tertiary-color font-azeret-mono rounded-[0.375rem] text-primary-color"
+              className="border border-tertiary-color-dark font-azeret-mono rounded-[0.375rem] text-primary-color-dark"
             >
               <Link href="/archive">VIEW ALL</Link>
             </Button>
@@ -82,7 +83,7 @@ export default function Home() {
         </div>
 
         <Footer />
-      </div>
+      </div> */}
     </main>
   );
 }

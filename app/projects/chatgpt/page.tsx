@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
@@ -34,16 +34,22 @@ function SectionNavLink({
   id,
   label,
   onSelect,
+  activeId,
 }: {
   id: SectionId;
   label: string;
   onSelect: (id: SectionId) => void;
+  activeId: SectionId | null;
 }) {
   return (
     <button
       type="button"
       onClick={() => onSelect(id)}
-      className="font-azeret-mono text-md text-tertiary-color-dark hover:text-primary-color-dark text-left transition-colors"
+      className={`font-azeret-mono text-base text-left transition-colors px-2 rounded-md ${
+        activeId === id
+          ? "text-primary-color-dark text-md"
+          : "text-tertiary-color-dark hover:text-primary-color-dark"
+      }`}
     >
       {label}
     </button>
@@ -58,13 +64,7 @@ function ProjectSection({
   children?: React.ReactNode;
 }) {
   return (
-    <section
-      id={id}
-      className="scroll-mt-24 flex flex-col space-y-8"
-    >
-      <p className="font-azeret-mono text-md text-tertiary-color-dark uppercase tracking-tight">
-        {id}
-      </p>
+    <section id={id} className="scroll-mt-24 flex flex-col py-3">
       {children}
     </section>
   );
@@ -75,89 +75,168 @@ function ChatGPTContent() {
   const fromAllWorks = searchParams.get("from") === "all-works";
   const crumbs = [{ label: "CHATGPT" }];
 
+  const [activeSection, setActiveSection] = useState<SectionId | null>(null);
+
   const chatgptProject = allProjects.find(
     (project) => project.projectName === "ChatGPT",
   );
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id as SectionId);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+
+    SECTIONS.forEach((section) => {
+      const el = document.getElementById(section.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="page-container">
-      <Breadcrumbs crumbs={crumbs} backTo={fromAllWorks ? "/archive" : "/"} />
-      <div className="relative">
-        <aside className="hidden lg:block absolute left-0 top-0">
-          <div className="flex flex-col items-start gap-4 w-56">
-            <nav
-              aria-label="Section navigation"
-              className="flex flex-col gap-2"
-            >
-              {SECTIONS.map((section) => (
-                <SectionNavLink
-                  key={section.id}
-                  id={section.id}
-                  label={section.label}
-                  onSelect={scrollToSection}
-                />
-              ))}
-            </nav>
-          </div>
+      <div className="relative flex">
+        {/* Desktop: sticky breadcrumbs + section nav */}
+        <aside className="hidden xl:flex flex-col gap-4 sticky top-20 self-start w-56">
+          <Breadcrumbs
+            crumbs={crumbs}
+            backTo={fromAllWorks ? "/archive" : "/"}
+          />
+          <nav aria-label="Section navigation" className="flex flex-col gap-2">
+            {SECTIONS.map((section) => (
+              <SectionNavLink
+                key={section.id}
+                id={section.id}
+                label={section.label}
+                onSelect={scrollToSection}
+                activeId={activeSection}
+              />
+            ))}
+          </nav>
         </aside>
 
         {/* Centered content – add content directly in each section */}
+
         <div className="content-container w-full mx-auto">
-          <section id="Overview">
-            <h1>
-              {chatgptProject?.title ??
-                "Designing a Prompt Library for ChatGPT"}
-            </h1>
-          </section>
+          {/* Mobile / tablet: breadcrumbs in normal flow */}
+          <div className="xl:hidden mb-4">
+            <Breadcrumbs
+              crumbs={crumbs}
+              backTo={fromAllWorks ? "/archive" : "/"}
+            />
+          </div>
+          <h1>{chatgptProject?.title ?? "Prompt Library for ChatGPT"}</h1>
+          <ProjectSection id="Overview"></ProjectSection>
+
           <ProjectSection id="Research">
-            <section className="flex flex-col space-y-2">
-              <h2>What the internet was already saying</h2>
+            <div className="py-8">
+              <h2>
+                Understanding the Problem Space Through Online Discussions and
+                Existing Content
+              </h2>
               <Image
                 src="/images/chatgpt/desk.png"
                 alt="ChatGPT's direct competitors"
                 width={1200}
                 height={600}
-                className="w-full h-auto border border-tertiary-color my-3"
+                className="w-full h-auto border border-tertiary-color mt-2 mb-5"
               />
               <p>
-                I spent time understanding how power users interact with ChatGPT
-                daily — reading community discussions on Reddit and X, watching
-                YouTube tutorials, exploring existing workarounds, and sizing
-                the problem. The demand was visible at scale
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde
+                praesentium reiciendis laborum at sint nisi sit dignissimos
+                ipsam, nulla distinctio fugiat, assumenda veniam voluptas totam
+                natus in nesciunt doloribus optio. Nostrum mollitia, tempore
+                amet aliquid doloremque, corporis iste numquam facilis quibusdam
               </p>
-            </section>
+            </div>
 
-            <section className="flex flex-col space-y-2">
-              <h2>Turns out ChatGPT isn't the only one</h2>
+            <div className="py-8">
+              <h2>
+                Understanding Patterns and Gaps Across Competing Solutions
+              </h2>
               <Image
-                src="/images/chatgpt/competitor.png"
+                src="/images/chatgpt/competitors.png"
+                alt="ChatGPT's direct competitors"
+                width={1200}
+                height={600}
+                className="w-full h-auto border border-tertiary-color mt-2 mb-5"
+              />
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere
+                tenetur, fugit, eius explicabo expedita quod sint ex adipisci
+                nulla cum libero a. Quo vero asperiores dolore nisi, repellat
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <h2>
+                Combining User Interviews and Observation to Uncover Deeper
+                Insights
+              </h2>
+              
+            </div>
+          </ProjectSection>
+
+          <ProjectSection id="Insights">
+            <div className="flex flex-col gap-2">
+              <h2>
+                Connecting the Dots Across Research to Identify Opportunities
+              </h2>
+              <Image
+                src="/images/chatgpt/synthesis.png"
                 alt="ChatGPT's direct competitors"
                 width={1200}
                 height={600}
                 className="w-full h-auto border border-tertiary-color"
               />
-            </section>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h2>Key Insights</h2>
+            </div>
           </ProjectSection>
-          <ProjectSection id="Insights">{/* Insights */}</ProjectSection>
-          <ProjectSection id="Ideation"></ProjectSection>
+
+          <ProjectSection id="Ideation">
+            <div className="flex flex-col gap-2">
+              <h2>Exploring a Wide Range of Ideas</h2>
+            </div>
+          </ProjectSection>
+
           <ProjectSection id="Flow">
-            <h2>
-              Identifing the most intuitive way to bring this feature to life
-            </h2>
-            <Image
-              src="/images/chatgpt/system.png"
-              alt="ChatGPT's direct competitors"
-              width={1200}
-              height={600}
-              className="w-full h-auto border border-tertiary-color"
-            />
+            <div className="flex flex-col gap-3">
+              <h2>
+                Identifing the Most Intuitive Way to Bring this Feature to Life
+              </h2>
+              <Image
+                src="/images/chatgpt/system.png"
+                alt="ChatGPT's direct competitors"
+                width={1200}
+                height={600}
+                className="w-full h-auto border border-tertiary-color"
+              />
+            </div>
           </ProjectSection>
           <ProjectSection id="Design">{/* Design */}</ProjectSection>
-          <ProjectSection id="Testing">{/* Testing */}</ProjectSection>
-          <ProjectSection id="Reflection">{/* Reflection */}</ProjectSection>
+          <ProjectSection id="Testing">
+            <div className="flex flex-col gap-3">
+              <h2>Testing the Solution With Users</h2>
+            </div>
+          </ProjectSection>
+          <ProjectSection id="Reflection">
+            <div className="flex flex-col gap-3">
+              <h2>What I Learned</h2>
+            </div>
+          </ProjectSection>
         </div>
       </div>
-      <Footer />
+      <Footer /> 
     </main>
   );
 }
