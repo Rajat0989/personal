@@ -17,7 +17,8 @@ export default function Home() {
 
   return (
     <main>
-      <div className="mx-auto w-full max-w-[88rem] px-4 sm:px-6">
+      portfolio coming soon...
+      {/* <div className="mx-auto w-full max-w-[88rem] px-4 sm:px-6">
       <div className="flex flex-col gap-[2.5rem] items-center w-full">
         <section className="flex flex-col gap-4 w-full">
           <HeaderMain />
@@ -56,7 +57,7 @@ export default function Home() {
 
         <Footer />
       </div>
-      </div>
+      </div> */}
     </main>
   );
 }
