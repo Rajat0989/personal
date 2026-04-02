@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 // Local utilities and hooks
 import { allProjects } from "@/lib/data/projectData";
@@ -11,16 +10,15 @@ import { allProjects } from "@/lib/data/projectData";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/ui/footer";
 import HeaderMain from "@/components/ui/header";
+import ProjectCard from "@/components/ui/projectCard";
 
 export default function Home() {
-  const featuredProjects = allProjects
-    .filter((project) => project.featured)
-    .map((project) => ({ ...project, year: project.date }));
+  const featuredProjects = allProjects.filter((project) => project.featured);
 
   return (
-    <main className="page-container">
-      Portfolio coming soon....
-      {/* <div className="flex flex-col gap-[2.5rem] items-center w-full">
+    <main>
+      <div className="mx-auto w-full max-w-[88rem] px-4 sm:px-6">
+      <div className="flex flex-col gap-[2.5rem] items-center w-full">
         <section className="flex flex-col gap-4 w-full">
           <HeaderMain />
         </section>
@@ -38,37 +36,11 @@ export default function Home() {
           </h2>
           <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
             {featuredProjects.map((project) => (
-              <Link
-                key={`${project.year}-${project.num}`}
+              <ProjectCard
+                key={project.num}
+                project={project}
                 href={project.href}
-                className="flex flex-col gap-2 w-full group"
-              >
-                <div className="w-full relative aspect-[3/2] overflow-hidden rounded-md border border-tertiary-color shadow-md">
-                  <Image
-                    src={project.svgSrc}
-                    alt={project.projectName}
-                    fill
-                    className="object-cover transition-opacity group-hover:opacity-90"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-                <div className="flex flex-col gap-0.5">
-                  {project.title ? (
-                    <p className="text-secondary-color text-lg font-medium">
-                      {project.title}
-                    </p>
-                  ) : null}
-                  <p className="font-tiempos-text font-light text-tertiary-color uppercase tracking-tight">
-                    {project.year}
-                    {project.type && (
-                      <>
-                        {" · "}
-                        {project.type}
-                      </>
-                    )}
-                  </p>
-                </div>
-              </Link>
+              />
             ))}
           </section>
           <div className="w-full flex justify-center items-center">
@@ -83,7 +55,8 @@ export default function Home() {
         </div>
 
         <Footer />
-      </div> */}
+      </div>
+      </div>
     </main>
   );
 }

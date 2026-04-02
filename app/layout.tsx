@@ -20,24 +20,14 @@ const azeretMono = Azeret_Mono({
 const tiemposText = localFont({
   src: [
     {
-      path: "../public/font/Tiempos/TiemposText/TiemposText-Regular.otf",
+      path: "../public/font/TiemposText-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/font/Tiempos/TiemposText/TiemposText-Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/font/Tiempos/TiemposText/TiemposText-Semibold.otf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/font/Tiempos/TiemposText/TiemposText-Bold.otf",
-      weight: "700",
-      style: "normal",
+      path: "../public/font/TiemposText-RegularItalic.otf",
+      weight: "400",
+      style: "italic",
     },
   ],
   variable: "--font-tiempos-text",

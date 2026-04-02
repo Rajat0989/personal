@@ -7,7 +7,7 @@ import HeaderMain from "@/components/ui/header";
 
 export default function ResumePage() {
   return (
-    <main className="page-container page-container-default">
+    <main>
       <div className="flex flex-col gap-[2.5rem] items-center w-full">
         <section className="flex flex-col gap-2 w-full">
           <HeaderMain />

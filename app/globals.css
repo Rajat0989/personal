@@ -36,9 +36,6 @@
     --line-height-lg: 1.5;
     --line-height-sm: 1.35;
 
-    /* Layout */
-    --max-width-page: 88rem;
-    --max-width-content: 48rem;
   }
 
   h1 {
@@ -61,24 +58,23 @@
 }
 
 @layer utilities {
-  .page-container {
-    max-width: var(--max-width-page);
-    width: 100%;
-    margin: 0 auto;
-    padding: 4vh 3rem;
-  }
-  @media (max-width: 640px) {
-    .page-container {
-      padding: 3vh 2rem;
+  @keyframes project-build-square {
+    0% {
+      opacity: var(--lo, 0.02);
+      transform: scale(0.99);
     }
-  }
-  @media (max-width: 440px) {
-    .page-container {
-      padding: 2vh 1rem;
+    40% {
+      opacity: var(--hi, 0.85);
+      transform: scale(1);
+    }
+    100% {
+      opacity: var(--lo, 0.02);
+      transform: scale(0.99);
     }
   }
 
-  .content-container {
-    max-width: var(--max-width-content);
+  .animate-project-build-square {
+    animation: project-build-square 2400ms ease-in-out infinite;
   }
+
 }

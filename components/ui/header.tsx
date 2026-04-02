@@ -17,18 +17,12 @@ const navItems: NavItem[] = [
   { value: "home", label: "HOME", href: "/" },
   { value: "projects", label: "ARCHIVE", href: "/archive" },
   { value: "about", label: "ABOUT", href: "/about" },
-  {
-    value: "resume",
-    label: "RESUME",
-    href: "/resume",
-  },
 ] as const;
 
 function getActiveTab(pathname: string): string {
   if (pathname === "/") return "home";
   if (pathname === "/archive") return "projects";
   if (pathname.startsWith("/about")) return "about";
-  if (pathname.startsWith("/resume")) return "resume";
   return "home";
 }
 

@@ -102,30 +102,30 @@ function ChatGPTContent() {
   }, []);
 
   return (
-    <main className="page-container">
-      <div className="relative flex">
-        {/* Desktop: sticky breadcrumbs + section nav */}
-        <aside className="hidden xl:flex flex-col gap-4 sticky top-20 self-start w-56">
-          <Breadcrumbs
-            crumbs={crumbs}
-            backTo={fromAllWorks ? "/archive" : "/"}
-          />
-          <nav aria-label="Section navigation" className="flex flex-col gap-2">
-            {SECTIONS.map((section) => (
-              <SectionNavLink
-                key={section.id}
-                id={section.id}
-                label={section.label}
-                onSelect={scrollToSection}
-                activeId={activeSection}
-              />
-            ))}
-          </nav>
-        </aside>
+    <main>
+      {/* Centered shell: nav + article read as one block, not pinned to viewport left */}
+      <div className="mx-auto w-full max-w-[72rem] px-4 sm:px-6 xl:px-8">
+        <div className="relative flex flex-col gap-8 xl:flex-row xl:items-start xl:gap-10">
+          {/* Desktop: sticky breadcrumbs + section nav (beside centered article column) */}
+          <aside className="hidden xl:flex w-56 shrink-0 flex-col gap-4 self-start sticky top-0">
+            <Breadcrumbs
+              crumbs={crumbs}
+              backTo={fromAllWorks ? "/archive" : "/"}
+            />
+            <nav aria-label="Section navigation" className="flex flex-col gap-2">
+              {SECTIONS.map((section) => (
+                <SectionNavLink
+                  key={section.id}
+                  id={section.id}
+                  label={section.label}
+                  onSelect={scrollToSection}
+                  activeId={activeSection}
+                />
+              ))}
+            </nav>
+          </aside>
 
-        {/* Centered content – add content directly in each section */}
-
-        <div className="content-container w-full mx-auto">
+          <div className="min-w-0 w-full max-w-[48rem] xl:mx-0">
           {/* Mobile / tablet: breadcrumbs in normal flow */}
           <div className="xl:hidden mb-4">
             <Breadcrumbs
@@ -234,6 +234,7 @@ function ChatGPTContent() {
               <h2>What I Learned</h2>
             </div>
           </ProjectSection>
+        </div>
         </div>
       </div>
       <Footer /> 

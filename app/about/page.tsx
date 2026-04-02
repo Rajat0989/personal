@@ -8,7 +8,8 @@ import HeaderMain from "@/components/ui/header";
 
 function AboutContent() {
   return (
-    <main className="page-container page-container-default">
+    <main>
+      <div className="mx-auto w-full max-w-[88rem] px-4 sm:px-6">
       <div className="flex flex-col gap-2 items-center w-full">
         <section className="flex flex-col gap-2 w-full">
           <HeaderMain />
@@ -52,6 +53,7 @@ function AboutContent() {
 
           <Footer />
         </div>
+      </div>
       </div>
     </main>
   );
